@@ -2,8 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-@import "./../assets/fonts/fonts-stylesheet.css";
+@import './../assets/fonts/fonts-stylesheet.css';
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
 body {
-    font-family: 'Clarendon Lt BT';
+  @apply min-w-full box-border bg-white font-primary;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-x: none;
+}
+body {
+  @apply m-0;
 }

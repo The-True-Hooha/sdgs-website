@@ -39,16 +39,6 @@
 }
 
 @font-face {
-    font-family: 'Seriffic Grunge';
-    src: local('Seriffic Grunge Bold'), local('SerifficGrunge-Bold'),
-        url('SerifficGrunge-Bold.woff2') format('woff2'),
-        url('SerifficGrunge-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
     font-family: 'LuloCleanOne';
     src: local('☞Lulo Clean One'), local('LuloCleanOne'),
         url('LuloCleanOne.woff2') format('woff2'),

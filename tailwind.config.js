@@ -4,7 +4,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        primary: ['"Clarendon Lt BT"'],
+        secondary: ['LuloCleanOne'],
+        tertiary: ['Georgia'],
+      },
+    },
   },
   plugins: [],
 };
