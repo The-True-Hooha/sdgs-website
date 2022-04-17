@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import "./../assets/fonts/fonts-stylesheet.css";
+
+body {
+    font-family: 'Clarendon Lt BT';
+}
