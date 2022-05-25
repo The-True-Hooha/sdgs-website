@@ -1,12 +1,14 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import { ManageUiContext } from '@components/Context'
+import { ManageUiContext } from '@components/ui/Context'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ManageUiContext>
-      <Component {...pageProps} />
-    </ManageUiContext>
+    <>
+      <ManageUiContext>
+        <Component {...pageProps} />
+      </ManageUiContext>
+    </>
   )
 }
 
