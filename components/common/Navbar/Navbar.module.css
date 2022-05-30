@@ -1,0 +1,8 @@
+.navBarContainer {
+  @apply inline-block cursor-pointer;
+}
+.bar1,
+.bar2,
+.bar3 {
+  @apply w-[35px] h-[3px] bg-[#333] my-[8px] mx-0 transition-all ease-in-out duration-300;
+}
