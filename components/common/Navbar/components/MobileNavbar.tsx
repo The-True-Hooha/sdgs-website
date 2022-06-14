@@ -33,9 +33,11 @@ const MobileNavbar = () => {
         />
         <div></div>
       </nav>
-      <div className={cx('h-screen bg-gray-600', { hidden: !displaySidebar })}>
+      <div
+        className={cx('h-screen bg-transparent', { hidden: !displaySidebar })}
+      >
         {menuLinks.map((menuLink: MenuListType) => (
-          <div className="w-full h-full" key={menuLink.id}>
+          <div className="w-full" key={menuLink.id}>
             {menuLink.label}
           </div>
         ))}

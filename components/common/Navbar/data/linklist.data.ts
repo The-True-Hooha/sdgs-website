@@ -46,7 +46,7 @@ export const menuLinks: MenuListType[] = [
   },
   {
     id: 2,
-    label: 'Who we are',
+    label: 'What we Do',
     subMenu: []
   }
 ];
