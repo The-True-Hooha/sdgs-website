@@ -13,7 +13,7 @@ type ActionT =
       type: 'CLOSE_SIDEBAR'
     }
 
-function uiReducer(state: stateT, action: ActionT) {
+const uiReducer = (state: stateT, action: ActionT) => {
   switch (action.type) {
     case 'OPEN_SIDEBAR': {
       return {

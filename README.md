@@ -36,3 +36,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Console log issue
 
 Check out tread [](https://github.com/vercel/next.js/issues/35822)
+
+## Icons used
+[heroicons by tailwind](https://heroicons.com/)
