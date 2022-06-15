@@ -3,14 +3,25 @@ import styles from './../Navbar.module.css';
 import { useUIContext } from '@components/ui/Context';
 import { menuLinks } from '../data/linklist.data';
 import { MenuListType } from '../model/LinkListType';
-import { ChevronRight } from '@components/icons';
+import { ArrowLeft, ChevronRight } from '@components/icons';
 import cx from 'clsx';
+import { useState } from 'react';
 
 const MobileNavbar = () => {
   const { toggleSidebar, displaySidebar } = useUIContext();
+  const [closeMainMenu, setCloseMainMenuState] = useState<boolean>(true);
+  const [closeSubMainMenu, setCloseSubMainMenuState] = useState<boolean>(false);
+  const openSubMenu = () => {
+    setCloseMainMenuState(false);
+    setCloseSubMainMenuState(true);
+  };
+  const closeSubMenu = () => {
+    setCloseMainMenuState(true);
+    setCloseSubMainMenuState(false);
+  };
   return (
     <div className="w-full fixed top-0 left-0 right-0">
-      <nav className="flex flex-row items-center justify-between h-auto py-[5px] px-[10px] w-full bg-red-500 z-[999]">
+      <nav className="flex flex-row items-center justify-between h-auto py-[5px] px-[10px] w-full z-[999]">
         <div className={cx(styles.navBarContainer, '')} onClick={toggleSidebar}>
           <div
             className={cx(styles.bar1, {
@@ -39,20 +50,39 @@ const MobileNavbar = () => {
           hidden: displaySidebar,
         })}
       >
-        {menuLinks.map((menuLink: MenuListType) => (
-          <div
-            className="w-full flex flex-row items-center py-[8px]"
-            key={menuLink.id}
-          >
-            <span className="mr-[4px] font-secondary font-bold uppercase">
-              {' '}
-              {menuLink.label}
-            </span>
-            <span>
-              <ChevronRight className="h-[24px] w-[24px]" />
-            </span>
-          </div>
-        ))}
+        <>
+          {closeMainMenu && (
+            <div className="w-full">
+              {menuLinks.map((menuLink: MenuListType) => (
+                <div
+                  className="w-full flex flex-row items-center py-[8px]"
+                  key={menuLink.id}
+                  onClick={openSubMenu}
+                >
+                  <span className="mr-[4px] font-secondary font-bold uppercase">
+                    {' '}
+                    {menuLink.label}
+                  </span>
+                  <span>
+                    <ChevronRight className="h-[24px] w-[24px]" />
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+        </>
+        <>
+          {closeSubMainMenu && (
+            <div className="w-full">
+              <div>
+                <button className="border-0" onClick={closeSubMenu}>
+                  <ArrowLeft />
+                </button>
+              </div>
+              submenu
+            </div>
+          )}
+        </>
       </div>
     </div>
   );
