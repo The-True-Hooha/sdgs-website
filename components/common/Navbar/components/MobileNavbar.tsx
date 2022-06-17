@@ -76,12 +76,13 @@ const MobileNavbar = () => {
         <>
           {closeSubMainMenu && (
             <div className="w-full">
-              <div className="flex flex-row items-center cursor-pointer">
-                <button className="border-0" onClick={closeSubMenu}>
-                  <ArrowLeft />
-                </button>
+              <button
+                className="border-0 flex flex-row items-center cursor-pointer"
+                onClick={closeSubMenu}
+              >
+                <ArrowLeft />
                 <span className="font-primary text-base ml-[8px]">Back</span>
-              </div>
+              </button>
               <>
                 {menuLinks[subMenuDataIdx] && (
                   <div className="w-full">
