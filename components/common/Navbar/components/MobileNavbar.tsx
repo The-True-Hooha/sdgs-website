@@ -49,9 +49,13 @@ const MobileNavbar = () => {
         <div></div>
       </nav>
       <div
-        className={cx('h-screen bg-transparent px-[10px] pt-[50px]', {
-          hidden: displaySidebar,
-        })}
+        className={cx(
+          'h-screen bg-transparent px-[10px] pt-[50px]',
+          styles.bgTransparent,
+          {
+            hidden: displaySidebar,
+          }
+        )}
       >
         <>
           {closeMainMenu && (
@@ -81,7 +85,7 @@ const MobileNavbar = () => {
                 onClick={closeSubMenu}
               >
                 <ArrowLeft />
-                <span className="font-primary text-base ml-[8px]">Back</span>
+                <span className="font-secondary font-semibold text-base m-0 ml-[8px]">Back</span>
               </button>
               <>
                 {menuLinks[subMenuDataIdx] && (
@@ -93,10 +97,10 @@ const MobileNavbar = () => {
                       {menuLinks[subMenuDataIdx]?.subMenu.map(
                         (subMenu: SubMenuType) => (
                           <div className="w-full py-[8px]" key={subMenu.id}>
-                            <h2 className="font-bold">{subMenu.label}</h2>
+                            <h2 className="font-secondary font-bold text-sm">{subMenu.label}</h2>
                             <ul className="pl-[16px]">
                               {subMenu.links.map((link: LinkType) => (
-                                <li key={link.id} className="py-[8px]">
+                                <li key={link.id} className="py-[8px] font-primary">
                                   {link.label}
                                 </li>
                               ))}
