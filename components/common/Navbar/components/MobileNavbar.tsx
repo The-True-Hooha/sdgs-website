@@ -85,22 +85,32 @@ const MobileNavbar = () => {
                 onClick={closeSubMenu}
               >
                 <ArrowLeft />
-                <span className="font-secondary font-semibold text-base m-0 ml-[8px]">Back</span>
+                <span className="font-secondary font-semibold text-base m-0 ml-[8px]">
+                  Back
+                </span>
               </button>
               <>
                 {menuLinks[subMenuDataIdx] && (
                   <div className="w-full">
-                    <h2 className="uppercase font-bold my-[24px]">
-                      {menuLinks[subMenuDataIdx]?.label}
-                    </h2>
+                    <div className="w-full relative overflow-hidden flex items-center">
+                      <div className="absolute left-[20px] w-[200px] h-[40px] bg-red-400"></div>
+                      <h2 className="uppercase font-bold my-[24px] font-secondary relative z-1">
+                        {menuLinks[subMenuDataIdx]?.label}
+                      </h2>
+                    </div>
                     <div>
                       {menuLinks[subMenuDataIdx]?.subMenu.map(
                         (subMenu: SubMenuType) => (
                           <div className="w-full py-[8px]" key={subMenu.id}>
-                            <h2 className="font-secondary font-bold text-sm">{subMenu.label}</h2>
+                            <h2 className="font-secondary font-bold text-sm">
+                              {subMenu.label}
+                            </h2>
                             <ul className="pl-[16px]">
                               {subMenu.links.map((link: LinkType) => (
-                                <li key={link.id} className="py-[8px] font-primary">
+                                <li
+                                  key={link.id}
+                                  className="py-[8px] font-primary"
+                                >
                                   {link.label}
                                 </li>
                               ))}
