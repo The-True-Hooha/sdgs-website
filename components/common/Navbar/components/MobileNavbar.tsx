@@ -9,23 +9,30 @@ import { useState } from 'react';
 
 const MobileNavbar = () => {
   const { toggleSidebar, displaySidebar } = useUIContext();
-  const [closeMainMenu, setCloseMainMenuState] = useState<boolean>(true);
-  const [closeSubMainMenu, setCloseSubMainMenuState] = useState<boolean>(false);
+  const [openMainMenu, setOpenMainMenuState] = useState<boolean>(true);
+  const [openSubMainMenu, setOpenSubMainMenuState] = useState<boolean>(false);
   const [subMenuDataIdx, setSubMenuDataIdx] = useState<number>(-1);
   const openSubMenu = (idx: number) => {
-    setCloseMainMenuState(false);
-    setCloseSubMainMenuState(true);
+    setOpenMainMenuState(false);
+    setOpenSubMainMenuState(true);
     setSubMenuDataIdx(idx);
   };
   const closeSubMenu = () => {
-    setCloseMainMenuState(true);
-    setCloseSubMainMenuState(false);
+    setOpenMainMenuState(true);
+    setOpenSubMainMenuState(false);
     setSubMenuDataIdx(-1);
   };
+  const toggleMenuBtn = () => {
+    if (openSubMainMenu) {
+      closeSubMenu();
+    }
+    toggleSidebar();
+  };
+
   return (
     <div className="w-full fixed top-0 left-0 right-0">
       <nav className="flex flex-row items-center justify-between h-auto py-[5px] px-[10px] w-full z-[999]">
-        <div className={cx(styles.navBarContainer, '')} onClick={toggleSidebar}>
+        <div className={cx(styles.navBarContainer, '')} onClick={toggleMenuBtn}>
           <div
             className={cx(styles.bar1, {
               '-rotate-45 translate-x-[0px] translate-y-[10px]': displaySidebar,
@@ -53,16 +60,16 @@ const MobileNavbar = () => {
           'h-screen bg-transparent px-[10px] pt-[50px]',
           styles.bgTransparent,
           {
-            hidden: displaySidebar,
+            hidden: !displaySidebar,
           }
         )}
       >
         <>
-          {closeMainMenu && (
+          {openMainMenu && (
             <div className="w-full">
               {menuLinks.map((menuLink: MenuListType, index: number) => (
                 <div
-                  className="w-full flex flex-row items-center py-[8px]"
+                  className="w-full flex flex-row items-center py-[20px]"
                   key={menuLink.id}
                   onClick={() => openSubMenu(index)}
                 >
@@ -78,13 +85,13 @@ const MobileNavbar = () => {
           )}
         </>
         <>
-          {closeSubMainMenu && (
+          {openSubMainMenu && (
             <div className="w-full">
               <button
                 className="border-0 flex flex-row items-center cursor-pointer"
                 onClick={closeSubMenu}
               >
-                <ArrowLeft />
+                <ArrowLeft color="text-red-400" />
                 <span className="font-secondary font-semibold text-base m-0 ml-[8px]">
                   Back
                 </span>
@@ -102,16 +109,22 @@ const MobileNavbar = () => {
                       {menuLinks[subMenuDataIdx]?.subMenu.map(
                         (subMenu: SubMenuType) => (
                           <div className="w-full py-[8px]" key={subMenu.id}>
-                            <h2 className="font-secondary font-bold text-sm">
-                              {subMenu.label}
+                            <h2 className="font-secondary font-bold text-sm flex items-center">
+                              <span className="align-middle">
+                                {subMenu.label}
+                              </span>
+                              {subMenu.links.length < 1 && (
+                                <ChevronRight className="h-[24px] w-[24px] text-red-400" />
+                              )}
                             </h2>
                             <ul className="pl-[16px]">
                               {subMenu.links.map((link: LinkType) => (
                                 <li
                                   key={link.id}
-                                  className="py-[8px] font-primary"
+                                  className="py-[8px] font-primary flex items-center"
                                 >
-                                  {link.label}
+                                  <span> {link.label}</span>
+                                  <ChevronRight className="h-[24px] w-[24px] text-red-400" />
                                 </li>
                               ))}
                             </ul>

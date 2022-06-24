@@ -1,12 +1,13 @@
-type IconType = {
-  className?: string;
-};
+import { IconType } from './type/Icon.type';
 
-const ChevronRight = ({ className = 'h-5 w-5' }: IconType) => {
+const ChevronRight = ({
+  className = 'h-5 w-5',
+  color = '',
+}: IconType): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={`${className} ${color || ''}`}
       viewBox="0 0 20 20"
       fill="currentColor"
     >

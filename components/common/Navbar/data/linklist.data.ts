@@ -169,7 +169,7 @@ export const menuLinks: MenuListType[] = [
         links: [],
       },
       {
-        id: 3.5,
+        id: 3.6,
         label: 'Photo library',
         urlTarget: '_self',
         url: 'photo-library',
@@ -179,7 +179,7 @@ export const menuLinks: MenuListType[] = [
   },
   {
     id: 4,
-    label: 'Our Impact',
+    label: 'Get Involved',
     subMenu: [
       {
         id: 4.1,
