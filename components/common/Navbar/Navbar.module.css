@@ -13,3 +13,6 @@
   backdrop-filter: blur(2.1px);
   -webkit-backdrop-filter: blur(2.1px);
 }
+.dropdown:hover .dropdownMenu {
+  display: block;
+}

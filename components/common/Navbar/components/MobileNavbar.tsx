@@ -88,6 +88,7 @@ const MobileNavbar = () => {
           {openSubMainMenu && (
             <div className="w-full">
               <button
+                type="button"
                 className="border-0 flex flex-row items-center cursor-pointer"
                 onClick={closeSubMenu}
               >
