@@ -1,6 +1,6 @@
 import { ChevronRight } from '@components/icons';
 import { menuLinks } from '../data/linklist.data';
-import { MenuListType } from '../model/LinkListType';
+import { MenuListType, SubMenuType } from '../model/LinkListType';
 import cx from 'clsx';
 import styles from './../Navbar.module.css';
 import Image from 'next/image';
@@ -61,6 +61,7 @@ const LgNavbar = (): JSX.Element => {
                 key={`${menuLink.id}--div-`}
                 className={cx(
                   styles.dropdownMenu,
+                  styles.bgTransparent,
                   { 'left-0': index === 0 },
                   { 'right-0': index === menuLinks.length - 1 },
                   {
@@ -75,9 +76,17 @@ const LgNavbar = (): JSX.Element => {
                       index !== menuLinks.length - 1 &&
                       index !== 0,
                   },
-                  'h-[600px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px]'
+                  'h-[600px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4'
                 )}
-              ></div>
+              >
+                <div className="w-4/12">
+                  <ul className="flex flex-col">
+                    {menuLink.subMenu.map((subLink: SubMenuType) => (
+                      <li key={subLink.id}>{subLink.label}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </React.Fragment>
         ))}
