@@ -5,12 +5,13 @@ import cx from 'clsx';
 import styles from './../Navbar.module.css';
 import Image from 'next/image';
 import React from 'react';
+import Link from 'next/link';
 
 const LgNavbar = (): JSX.Element => {
   const midIndex = Math.round(menuLinks.length / 2);
   return (
     <div className="w-full flex items-center justify-center py-[10px]">
-      <div className=" w-6/12 flex flex-row items-center justify-between">
+      <div className=" w-8/12 xl:w-6/12 flex flex-row items-center justify-between">
         {menuLinks.map((menuLink: MenuListType, index: number) => (
           <React.Fragment key={`${index}-div-a`}>
             <React.Fragment key={`${index}-div-b`}>
@@ -82,7 +83,11 @@ const LgNavbar = (): JSX.Element => {
                 <div className="w-4/12">
                   <ul className="flex flex-col">
                     {menuLink.subMenu.map((subLink: SubMenuType) => (
-                      <li key={subLink.id}>{subLink.label}</li>
+                      <li key={subLink.id}>
+                        <Link href="/">
+                          <a> {subLink.label}</a>
+                        </Link>
+                      </li>
                     ))}
                   </ul>
                 </div>
