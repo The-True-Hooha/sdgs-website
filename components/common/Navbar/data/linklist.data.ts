@@ -4,6 +4,7 @@ export const menuLinks: MenuListType[] = [
   {
     id: 1,
     label: 'Who we are',
+    imgUrl: '/assets/images/mama-plantain.jpeg',
     subMenu: [
       {
         id: 1.1,
@@ -83,6 +84,7 @@ export const menuLinks: MenuListType[] = [
   {
     id: 2,
     label: 'What we Do',
+    imgUrl: '/assets/images/oil-rig.jpeg',
     subMenu: [
       {
         id: 2.1,
@@ -124,6 +126,7 @@ export const menuLinks: MenuListType[] = [
   {
     id: 3,
     label: 'Our Impact',
+    imgUrl: '/assets/images/medical.jpeg',
     subMenu: [
       {
         id: 3.1,
@@ -180,6 +183,7 @@ export const menuLinks: MenuListType[] = [
   {
     id: 4,
     label: 'Get Involved',
+    imgUrl: '/assets/images/agric-engr.jpeg',
     subMenu: [
       {
         id: 4.1,

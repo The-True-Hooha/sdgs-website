@@ -77,10 +77,10 @@ const LgNavbar = (): JSX.Element => {
                       index !== menuLinks.length - 1 &&
                       index !== 0,
                   },
-                  'h-[500px] w-[800px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4 flex-row'
+                  'overflow-hidden h-[500px] w-[800px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] flex-row'
                 )}
               >
-                <div className="w-3/12 flex pt-[50px]">
+                <div className="w-3/12 flex pt-[50px] px-[10px]">
                   <ul>
                     {menuLink.subMenu.map((subLink: SubMenuType) => (
                       <li
@@ -97,7 +97,7 @@ const LgNavbar = (): JSX.Element => {
                     ))}
                   </ul>
                 </div>
-                <div className="w-6/12 pt-[50px] px-[20px]">
+                <div className="w-6/12 pt-[50px] px-[20px] bg-gray-300">
                   <h2 className="font-secondary font-bold uppercase">
                     Lorem header
                   </h2>
@@ -107,6 +107,17 @@ const LgNavbar = (): JSX.Element => {
                     earum in corporis aperiam vero odio veritatis. Dolor
                     similique earum natus doloremque unde cum.
                   </p>
+                </div>
+                <div className="w-3/12 bg-red-300">
+                  <Image
+                    key={`${index}-img`}
+                    src={menuLink.imgUrl}
+                    alt="main-logo"
+                    width={300}
+                    height={500}
+                    layout="fixed"
+                    className="object-cover object-center"
+                  />
                 </div>
               </div>
             </div>

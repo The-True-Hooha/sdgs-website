@@ -4,6 +4,7 @@ export type MenuListType = {
   subMenu: SubMenuType[];
   url?: string;
   cssClasses?: string;
+  imgUrl: string;
 };
 export type SubMenuType = LinkType & {
   links: LinkType[];
