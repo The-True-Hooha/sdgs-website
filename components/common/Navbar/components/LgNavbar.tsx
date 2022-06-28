@@ -77,20 +77,27 @@ const LgNavbar = (): JSX.Element => {
                       index !== menuLinks.length - 1 &&
                       index !== 0,
                   },
-                  'h-[600px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4'
+                  'h-[500px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4 flex-row'
                 )}
               >
-                <div className="w-4/12">
-                  <ul className="flex flex-col">
+                <div className="w-4/12 flex items-center">
+                  <ul>
                     {menuLink.subMenu.map((subLink: SubMenuType) => (
-                      <li key={subLink.id}>
+                      <li
+                        key={subLink.id}
+                        className="font-secondary font-semibold text-[10px] border-b border-solid border-gray-100"
+                      >
                         <Link href="/">
-                          <a> {subLink.label}</a>
+                          <a className="block px-[10px] py-[15px] hover:bg-red-400">
+                            {' '}
+                            {subLink.label}
+                          </a>
                         </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
+                 <div className="w-4/12 flex items-center"></div>
               </div>
             </div>
           </React.Fragment>
