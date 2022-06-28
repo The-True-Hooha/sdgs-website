@@ -7,14 +7,14 @@ import Image from 'next/image';
 import React from 'react';
 
 const LgNavbar = (): JSX.Element => {
-  const showLogo = Math.round(menuLinks.length / 2);
+  const midIndex = Math.round(menuLinks.length / 2);
   return (
     <div className="w-full flex items-center justify-center py-[10px]">
       <div className=" w-6/12 flex flex-row items-center justify-between">
         {menuLinks.map((menuLink: MenuListType, index: number) => (
           <React.Fragment key={`${index}-div-a`}>
             <React.Fragment key={`${index}-div-b`}>
-              {showLogo === index ? (
+              {midIndex === index ? (
                 <div className="w-[50px] h-[50px]" key={`${index}-img-div`}>
                   <Image
                     key={`${index}-img`}
@@ -56,10 +56,25 @@ const LgNavbar = (): JSX.Element => {
                   />
                 </span>
               </button>
+              {/*  -left-[100%] */}
               <div
                 key={`${menuLink.id}--div-`}
                 className={cx(
                   styles.dropdownMenu,
+                  { 'left-0': index === 0 },
+                  { 'right-0': index === menuLinks.length - 1 },
+                  {
+                    '-left-[100%]':
+                      index < midIndex &&
+                      index !== menuLinks.length - 1 &&
+                      index !== 0,
+                  },
+                  {
+                    '-right-[100%]':
+                      index >= midIndex &&
+                      index !== menuLinks.length - 1 &&
+                      index !== 0,
+                  },
                   'h-[600px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px]'
                 )}
               ></div>

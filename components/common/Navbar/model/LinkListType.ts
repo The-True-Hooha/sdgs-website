@@ -1,8 +1,9 @@
 export type MenuListType = {
   id: number;
   label: string;
-  url?: string;
   subMenu: SubMenuType[];
+  url?: string;
+  cssClasses?: string;
 };
 export type SubMenuType = LinkType & {
   links: LinkType[];
