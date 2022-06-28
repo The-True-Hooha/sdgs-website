@@ -77,10 +77,10 @@ const LgNavbar = (): JSX.Element => {
                       index !== menuLinks.length - 1 &&
                       index !== 0,
                   },
-                  'h-[500px] w-[600px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4 flex-row'
+                  'h-[500px] w-[800px] bg-red-500 rounded-[10px] absolute hidden transition-all ease-in-out duration-100 z-[2] top-[50px] p-4 flex-row'
                 )}
               >
-                <div className="w-4/12 flex items-center">
+                <div className="w-3/12 flex pt-[50px]">
                   <ul>
                     {menuLink.subMenu.map((subLink: SubMenuType) => (
                       <li
@@ -97,7 +97,17 @@ const LgNavbar = (): JSX.Element => {
                     ))}
                   </ul>
                 </div>
-                 <div className="w-4/12 flex items-center"></div>
+                <div className="w-6/12 pt-[50px] px-[20px]">
+                  <h2 className="font-secondary font-bold uppercase">
+                    Lorem header
+                  </h2>
+                  <p className="font-primary text-sm">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Hic magnam, unde dolores doloremque distinctio maiores sunt
+                    earum in corporis aperiam vero odio veritatis. Dolor
+                    similique earum natus doloremque unde cum.
+                  </p>
+                </div>
               </div>
             </div>
           </React.Fragment>
