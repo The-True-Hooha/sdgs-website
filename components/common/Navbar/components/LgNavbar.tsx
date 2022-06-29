@@ -97,7 +97,7 @@ const LgNavbar = (): JSX.Element => {
                     ))}
                   </ul>
                 </div>
-                <div className="w-6/12 pt-[50px] px-[20px] bg-gray-300">
+                <div className="w-6/12 pt-[50px] px-[20px] bg-gray-100">
                   <h2 className="font-secondary font-bold uppercase">
                     Lorem header
                   </h2>
@@ -117,6 +117,7 @@ const LgNavbar = (): JSX.Element => {
                     height={500}
                     layout="fixed"
                     className="object-cover object-center"
+                    priority={true}
                   />
                 </div>
               </div>
