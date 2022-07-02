@@ -16,13 +16,18 @@ const LgNavbar = (): JSX.Element => {
           <React.Fragment key={`${index}-div-a`}>
             <React.Fragment key={`${index}-div-b`}>
               {midIndex === index ? (
-                <div className="w-[50px] h-[50px] rounded-full overflow-hidden" key={`${index}-img-div`}>
+                <div
+                  className="w-[50px] h-[50px] rounded-full overflow-hidden"
+                  key={`${index}-img-div`}
+                >
                   <Image
                     key={`${index}-img`}
                     src="/assets/images/fupre-sdsn.png"
                     alt="main-logo"
                     height={50}
                     width={50}
+                    layout="fixed"
+                    priority={true}
                   />
                 </div>
               ) : (
