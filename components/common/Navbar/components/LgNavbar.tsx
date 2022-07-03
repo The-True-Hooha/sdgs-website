@@ -93,7 +93,7 @@ const LgNavbar = (): JSX.Element => {
                         className="font-secondary font-semibold text-[10px] border-b border-solid border-gray-100"
                       >
                         <Link href="/">
-                          <a className="block px-[10px] py-[15px] hover:bg-red-400">
+                          <a className="block px-[10px] py-[15px] hover:bg-emerald-400 rounded-md hover:text-white">
                             {' '}
                             {subLink.label}
                           </a>
@@ -102,7 +102,7 @@ const LgNavbar = (): JSX.Element => {
                     ))}
                   </ul>
                 </div>
-                <div className="w-6/12 pt-[50px] px-[20px] bg-gray-100">
+                <div className="w-6/12 pt-[50px] px-[20px]">
                   <h2 className="font-secondary font-bold uppercase">
                     Lorem header
                   </h2>
