@@ -1,6 +1,6 @@
 .container {
   /*padding: 0 2rem;*/
-  @apply w-full;
+  @apply w-full h-auto overflow-hidden;
 }
 
 .footer {

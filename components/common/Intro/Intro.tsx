@@ -1,13 +1,13 @@
 import Image from 'next/image';
 const Intro = (): JSX.Element => {
   return (
-    <div className="w-full">
-      <div className="h-screen w-6/12 bg-emerald-400 relative flex  items-center px-[50px]">
-        <div className="relative">
-          <h1 className="font-secondary font-bold text-[202px] text-white m-0 p-0">
+    <div className="w-full flex flex-col md:flex-row">
+      <div className="h-screen w-full md:w-6/12 bg-emerald-400 relative flex items-center px-[20px] md:px-[50px]">
+        <div className="relative w-full">
+          <h1 className="font-secondary font-bold text-8xl md:text-[202px] text-white m-0 p-0">
             SDGS
           </h1>
-          <p className="font-secondary font-bold text-[50px] text-white m-0 relative -top-[50px]">
+          <p className="font-secondary font-bold text-[50px] md:text-[80px]  text-white m-0 relative md:-top-[10px] z-10">
             FUPRE
           </p>
         </div>
@@ -23,6 +23,7 @@ const Intro = (): JSX.Element => {
           />
         </div>
       </div>
+      <div className="w-full md:w-6/12"></div>
     </div>
   );
 };
