@@ -15,8 +15,8 @@ const Intro = (): JSX.Element => {
           <Image
             src="/assets/images/for-sdgs.jpeg"
             alt="main-logo"
-            width={250}
-            height={300}
+            width={450}
+            height={500}
             layout="fixed"
             className="object-cover object-center"
             priority={true}

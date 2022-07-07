@@ -1,7 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Intro, Navbar } from '@components/common'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { Intro, Navbar, Events } from '@components/common';
+import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
   return (
@@ -16,12 +16,13 @@ const Home: NextPage = () => {
       </header>
       <main className="w-full">
         <Intro />
+        <Events />
       </main>
       {/*  <footer className={styles.footer}>
 
       </footer> */}
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
