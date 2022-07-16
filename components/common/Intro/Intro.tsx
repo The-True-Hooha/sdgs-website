@@ -1,3 +1,4 @@
+import { LottieSlider } from '@components/ui';
 import Image from 'next/image';
 const Intro = (): JSX.Element => {
   return (
@@ -23,7 +24,9 @@ const Intro = (): JSX.Element => {
           />
         </div>
       </div>
-      <div className="w-full md:w-6/12"></div>
+      <div className="w-full md:w-6/12 grid place-items-center">
+        <LottieSlider />
+      </div>
     </div>
   );
 };
