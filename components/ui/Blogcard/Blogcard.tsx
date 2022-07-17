@@ -14,7 +14,8 @@ const Blogcard = (): JSX.Element => {
           priority={true}
         />
       </div>
-      <div className="w-full px-5 py-[50px]">
+      <div className="w-full px-5 py-5">
+        <h3 className="font-secondary text-sm mb-2">05 July, 2022</h3>
         <h3 className="font-secondary font-bold text-md uppercase">Stories</h3>
         <div className="w-full">
           <h4 className="font-secondary text-xl uppercase my-[20px]">
