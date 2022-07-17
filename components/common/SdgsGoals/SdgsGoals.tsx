@@ -7,13 +7,17 @@ const SdgsGoals = (): JSX.Element => {
       aria-labelledby="sdgs-gols"
       className="p-0 md:px-[50px] md:py-[50px] grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-1"
     >
-      <div className="w-full md:w-[300px] p-5">
-        <h2 id="sdgs-gols" className="uppercase font-secondary text-[50px]">
-          Sdgs goals
+      <div className="w-full md:w-[300px] flex items-start">
+        <h2 id="sdgs-gols" className="uppercase font-secondary text-3xl">
+          Sdgs <br />
+          goals
         </h2>
       </div>
       {sdgsGoals.map((v: SdgsGoalsDataType, idx: number) => (
-        <div key={idx} className="overflow-hidden relative h-[500px]">
+        <div
+          key={idx}
+          className="overflow-hidden relative h-[500px] cursor-pointer"
+        >
           <Image
             src={v.bgImg}
             alt={v.goalDescription}
@@ -23,7 +27,7 @@ const SdgsGoals = (): JSX.Element => {
             className="w-full object-cover object-center"
             priority={true}
           />
-          <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-10 bottom-3 left-3">
+          <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-1 bottom-3 left-3">
             <Image
               src={v.goalImg}
               alt={v.goalDescription}
@@ -33,6 +37,12 @@ const SdgsGoals = (): JSX.Element => {
               className="object-cover object-center"
               priority={true}
             />
+          </div>
+          <div className="absolute top-0 w-full h-[500px] z-[2] flex flex-col justify-center p-2 opacity-0 hover:opacity-100 bg-gray-200/30 backdrop-blur">
+            <h3 className="font-secondary font-bold text-sm uppercase mb-2">
+              Goal {idx}
+            </h3>
+            <p className="font-primary text-md">{v.goalDescription}</p>
           </div>
         </div>
       ))}
