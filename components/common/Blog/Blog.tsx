@@ -41,24 +41,16 @@ const blogPosts = [
     link: '',
     category: '',
   },
-  {
-    title: 'Blog Post 1',
-    date: '2020-01-01',
-    content: 'This is the content of the first blog post',
-    image: '',
-    link: '',
-    category: '',
-  },
 ];
 
 const Blog = (): JSX.Element => {
   return (
     <section
-      aria-labelledby="events"
+      aria-labelledby="blogs"
       className="p-0 md:px-[50px] md:py-[50px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
     >
       <div className="w-full md:w-[300px] p-5">
-        <h2 id="events" className="uppercase font-secondary text-[50px]">
+        <h2 id="blogs" className="uppercase font-secondary text-[50px]">
           Recent <br />
           Blog
         </h2>
