@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Intro, Navbar, Events } from '@components/common';
+import { Intro, Navbar, Events, Blog } from '@components/common';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -17,6 +17,7 @@ const Home: NextPage = () => {
       <main className="w-full">
         <Intro />
         <Events />
+        <Blog />
       </main>
       {/*  <footer className={styles.footer}>
 
