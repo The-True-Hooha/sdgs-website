@@ -38,11 +38,13 @@ const SdgsGoals = (): JSX.Element => {
               priority={true}
             />
           </div>
-          <div className="absolute top-0 w-full h-[500px] z-[2] flex flex-col justify-center p-2 opacity-0 hover:opacity-100 bg-gray-200/30 backdrop-blur">
-            <h3 className="font-secondary font-bold text-sm uppercase mb-2">
-              Goal {idx}
+          <div className="absolute top-0 w-full h-[500px] z-[2] flex flex-col justify-center p-2 opacity-0 hover:opacity-100 bg-gray-200/40 backdrop-blur">
+            <h3 className="font-secondary font-bold text-sm uppercase mb-2 text-white">
+              Goal {v.id}
             </h3>
-            <p className="font-primary text-md">{v.goalDescription}</p>
+            <p className="font-primary text-md text-white">
+              {v.goalDescription}
+            </p>
           </div>
         </div>
       ))}

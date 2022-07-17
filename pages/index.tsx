@@ -1,6 +1,13 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Intro, Navbar, Events, Blog, SdgsGoals } from '@components/common';
+import {
+  Intro,
+  Navbar,
+  Events,
+  Blog,
+  SdgsGoals,
+  Footer,
+} from '@components/common';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -20,9 +27,7 @@ const Home: NextPage = () => {
         <Blog />
         <SdgsGoals />
       </main>
-      {/*  <footer className={styles.footer}>
-
-      </footer> */}
+      <Footer />
     </div>
   );
 };
