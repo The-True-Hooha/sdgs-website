@@ -47,12 +47,16 @@ const MobileNavbar = () => {
             })}
           ></div>
         </div>
-        <Image
-          src="/assets/images/fupre-sdsn.png"
-          alt="main-logo"
-          height={32}
-          width={32}
-        />
+        <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
+          <Image
+            src="/assets/images/fupre-sdsn.png"
+            alt="main-logo"
+            height={50}
+            width={50}
+            layout="fixed"
+            priority={true}
+          />
+        </div>
         <div></div>
       </nav>
       <div
