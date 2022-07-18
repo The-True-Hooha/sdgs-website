@@ -10,7 +10,6 @@ const Navbar = () => {
       <div className='w-full hidden lg:block'>
         <LgNavbar />
       </div>
-
     </div>
   );
 };

@@ -56,7 +56,7 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full">
-          <div className="py-5 flex items-start justify-between">
+          <div className="w-full py-5 lg:flex lg:items-start lg:justify-between">
             {menuLinks.map((menuLink: MenuListType, index: number) => (
               <Accordion
                 buttonText={menuLink.label}
