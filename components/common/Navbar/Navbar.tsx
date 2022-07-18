@@ -4,16 +4,16 @@ import { useDebounce } from 'usehooks-ts';
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-  const [activateNavBg, setActivateNavBg] = useState<string>(false);
-  const debouncedValue = useDebounce<string>(activateNavBg, 500);
+  const [navBg, setNavBg] = useState<string>('');
+  const debouncedValue = useDebounce<string>(navBg, 500);
   const scrollHandler = () => {
     if (
       document.body.scrollTop > 80 ||
       document.documentElement.scrollTop > 80
     ) {
-      setActivateNavBg('bg-[rgba(255, 255, 255, 0.46)] backdrop-blur-[2.1px]');
+      setNavBg('bg-[rgba(255, 255, 255, 0.46)] backdrop-blur-[2.1px]');
     } else {
-      setActivateNavBg('');
+      setNavBg('');
     }
   };
   useEffect(() => {
