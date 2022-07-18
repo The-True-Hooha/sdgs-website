@@ -30,7 +30,7 @@ const SdgsGoals = (): JSX.Element => {
           <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-1 bottom-3 left-3">
             <Image
               src={v.goalImg}
-              alt={v.goalDescription}
+              alt={`goal-${idx + 1}`}
               width={150}
               height={150}
               layout="responsive"
