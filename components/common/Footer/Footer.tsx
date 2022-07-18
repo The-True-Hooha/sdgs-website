@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { menuLinks } from '../Navbar/data/linklist.data';
 import { MenuListType, SubMenuType } from '../Navbar/model/LinkListType';
-import { FiFacebook, FiTwitter, FiLinkedin } from 'react-icons/fi';
+import { FiFacebook, FiTwitter, FiLinkedin, FiYoutube } from 'react-icons/fi';
 
 const Footer = (): JSX.Element => {
   return (
@@ -55,21 +55,23 @@ const Footer = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="py-5">
+        <div className="w-full">
+          <div className="py-5 flex items-start justify-between">
             {menuLinks.map((menuLink: MenuListType, index: number) => (
               <Accordion
                 buttonText={menuLink.label}
                 key={index}
-                buttonClasses="font-secondary font-bold text-white"
-                iconClasses="text-white"
-                childernDivRefClasses="!border-white"
+                buttonClasses="font-secondary font-bold text-white lg:px-0"
+                iconClasses="text-white lg:hidden"
+                childernDivRefClasses="!border-white lg:!min-h-fit lg:border-none"
+                parentDivRefClasses="!border-white lg:border-none"
+                doUseMediaQuery={true}
               >
-                <ul className="py-4 px-2" key={`${menuLink.id}-id-ul`}>
+                <ul className="py-4 px-2 lg:px-0" key={`${menuLink.id}-id-ul`}>
                   {menuLink.subMenu.map((subm: SubMenuType) => (
                     <li
                       key={subm.id}
-                      className="py-2 px-3 font-secondary text-white"
+                      className="py-2 px-3 md:px-0 font-secondary text-white"
                     >
                       <Link href={subm.url}>{subm.label}</Link>
                     </li>
@@ -78,10 +80,11 @@ const Footer = (): JSX.Element => {
               </Accordion>
             ))}
           </div>
-          <div className='flex items-center gap-[10px]'>
+          <div className="flex items-center gap-[10px]">
             <FiFacebook className="text-white h-[24px] w-[24px]" />
             <FiTwitter className="text-white h-[24px] w-[24px]" />
             <FiLinkedin className="text-white h-[24px] w-[24px]" />
+            <FiYoutube className="text-white h-[24px] w-[24px]" />
           </div>
         </div>
       </div>
