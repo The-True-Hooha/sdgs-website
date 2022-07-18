@@ -7,10 +7,14 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 
-const LgNavbar = (): JSX.Element => {
+const LgNavbar: React.FunctionComponent<{
+  navBg?: string;
+}> = ({ navBg = '' }): JSX.Element => {
   const midIndex = Math.round(menuLinks.length / 2);
   return (
-    <div className="w-full flex items-center justify-center py-[10px]">
+    <div
+      className={cx('w-full flex items-center justify-center py-[10px]', navBg)}
+    >
       <div className=" w-8/12 xl:w-6/12 flex flex-row items-center justify-between">
         {menuLinks.map((menuLink: MenuListType, index: number) => (
           <React.Fragment key={`${index}-div-a`}>

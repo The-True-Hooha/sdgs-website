@@ -25,7 +25,6 @@ const Accordion: FC<{
   const [isActive, setActive] = useState<boolean>(false);
   const matches = useMediaQuery('(min-width: 768px)');
   useEffect(() => {
-    console.log(matches);
     if (accordRef.current !== null) {
       if (doUseMediaQuery && matches) {
         accordRef.current.style.height = `${accordRef?.current.scrollHeight}px`;

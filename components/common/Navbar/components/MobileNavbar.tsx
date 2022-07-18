@@ -7,11 +7,14 @@ import { ArrowLeft, ChevronRight } from '@components/icons';
 import cx from 'clsx';
 import { useState } from 'react';
 
-const MobileNavbar = () => {
+const MobileNavbar: React.FunctionComponent<{
+  navBg?: string;
+}> = ({ navBg = '' }) => {
   const { toggleSidebar, displaySidebar } = useUIContext();
   const [openMainMenu, setOpenMainMenuState] = useState<boolean>(true);
   const [openSubMainMenu, setOpenSubMainMenuState] = useState<boolean>(false);
   const [subMenuDataIdx, setSubMenuDataIdx] = useState<number>(-1);
+
   const openSubMenu = (idx: number) => {
     setOpenMainMenuState(false);
     setOpenSubMainMenuState(true);
@@ -31,7 +34,12 @@ const MobileNavbar = () => {
 
   return (
     <div className="w-full fixed top-0 left-0 right-0">
-      <nav className="flex flex-row items-center justify-between h-auto py-[5px] px-[10px] w-full z-[999]">
+      <nav
+        className={cx(
+          'flex flex-row items-center justify-between h-auto py-[5px] px-[10px] w-full z-[999]',
+          navBg
+        )}
+      >
         <div className={cx(styles.navBarContainer, '')} onClick={toggleMenuBtn}>
           <div
             className={cx(styles.bar1, {
