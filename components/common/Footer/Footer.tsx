@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { menuLinks } from '../Navbar/data/linklist.data';
 import { MenuListType, SubMenuType } from '../Navbar/model/LinkListType';
+import { FiFacebook, FiTwitter, FiLinkedin } from 'react-icons/fi';
+
 const Footer = (): JSX.Element => {
   return (
     <footer
@@ -53,24 +55,34 @@ const Footer = (): JSX.Element => {
             </div>
           </div>
         </div>
-        <div className='py-5'>
-          {menuLinks.map((menuLink: MenuListType, index: number) => (
-            <Accordion
-              buttonText={menuLink.label}
-              key={index}
-              buttonClasses="font-secondary font-bold text-white"
-              iconClasses="text-white"
-              childernDivRefClasses="!border-white"
-            >
-              <ul className="py-4 px-2" key={`${menuLink.id}-id-ul`}>
-                {menuLink.subMenu.map((subm: SubMenuType) => (
-                  <li key={subm.id} className="py-2 px-3 font-secondary text-white">
-                    <Link href={subm.url}>{subm.label}</Link>
-                  </li>
-                ))}
-              </ul>
-            </Accordion>
-          ))}
+        <div>
+          <div className="py-5">
+            {menuLinks.map((menuLink: MenuListType, index: number) => (
+              <Accordion
+                buttonText={menuLink.label}
+                key={index}
+                buttonClasses="font-secondary font-bold text-white"
+                iconClasses="text-white"
+                childernDivRefClasses="!border-white"
+              >
+                <ul className="py-4 px-2" key={`${menuLink.id}-id-ul`}>
+                  {menuLink.subMenu.map((subm: SubMenuType) => (
+                    <li
+                      key={subm.id}
+                      className="py-2 px-3 font-secondary text-white"
+                    >
+                      <Link href={subm.url}>{subm.label}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </Accordion>
+            ))}
+          </div>
+          <div className='flex items-center gap-[10px]'>
+            <FiFacebook className="text-white h-[24px] w-[24px]" />
+            <FiTwitter className="text-white h-[24px] w-[24px]" />
+            <FiLinkedin className="text-white h-[24px] w-[24px]" />
+          </div>
         </div>
       </div>
     </footer>
