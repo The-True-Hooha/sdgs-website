@@ -12,7 +12,7 @@ const Footer = (): JSX.Element => {
       className="bg-emerald-400 px-2 lg:md:px-[50px]"
     >
       <div className="w-full py-6">
-        <div className="w-full flex flex-col gap-5 lg:flex-row">
+        <div className="w-full flex flex-col gap-5 lg:flex-row lg:py-[50px] items-center">
           <div className="w-full lg:w-1/2 flex items-center gap-3">
             <div className="w-[64px] h-[64px] overflow-hidden">
               <Image
@@ -34,21 +34,21 @@ const Footer = (): JSX.Element => {
               </p>
             </div>
           </div>
-          <div className="w-full  lg:w-1/2">
-            <p className="font-primary text-md text-white mb-2">
+          <div className="w-full lg:w-1/2 lg:flex lg:flex-col lg:items-end">
+            <p className="font-secondary font-semibold text-[12px] text-white mb-2">
               Sign up for our newsletter
             </p>
-            <div className="w-full border border-solid border-white flex items-center p-2 rounded-[30px]">
+            <div className="w-full border border-solid border-white flex items-center p-1 rounded-[30px] lg:max-w-[500px]">
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Email"
-                className="bg-transparent placeholder-white text-white text-lg w-full p-2 outline-none rounded-lg"
+                className="font-primary font-normal bg-transparent placeholder-white text-white text-sm w-full p-2 outline-none rounded-lg"
               />
               <button
                 type="button"
-                className="uppercase bg-white p-2 text-emerald-400 text-sm rounded-[115px] font-secondary font-bold"
+                className="uppercase bg-white p-3 text-emerald-400 hover:bg-gray-100 text-sm rounded-[115px] font-secondary font-bold transition-all"
               >
                 Submit
               </button>
@@ -56,22 +56,21 @@ const Footer = (): JSX.Element => {
           </div>
         </div>
         <div className="w-full">
-          <div className="w-full py-5 lg:flex lg:items-start lg:justify-between">
+          <div className="w-full py-5 lg:hidden">
             {menuLinks.map((menuLink: MenuListType, index: number) => (
               <Accordion
                 buttonText={menuLink.label}
                 key={index}
                 buttonClasses="font-secondary font-bold text-white lg:px-0"
-                iconClasses="text-white lg:hidden"
-                childernDivRefClasses="!border-white lg:!min-h-fit lg:border-none"
-                parentDivRefClasses="!border-white lg:border-none"
-                doUseMediaQuery={true}
+                iconClasses="text-white"
+                childernDivRefClasses="!border-white"
+                parentDivRefClasses="!border-white"
               >
                 <ul className="py-4 px-2 lg:px-0" key={`${menuLink.id}-id-ul`}>
                   {menuLink.subMenu.map((subm: SubMenuType) => (
                     <li
                       key={subm.id}
-                      className="py-2 px-3 md:px-0 font-secondary text-white"
+                      className="py-2 px-3 md:px-0 font-secondary text-white lg:font-primary"
                     >
                       <Link href={subm.url}>{subm.label}</Link>
                     </li>

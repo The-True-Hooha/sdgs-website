@@ -2,7 +2,6 @@ import React, { FC, ReactNode, useEffect, useRef, useState } from 'react';
 import cx from 'clsx';
 import ChevronRight from '../../icons/ChevronRight';
 import s from './Accordion.module.css';
-import { useMediaQuery } from 'usehooks-ts';
 
 const Accordion: FC<{
   buttonText?: string;
@@ -11,7 +10,6 @@ const Accordion: FC<{
   children: ReactNode;
   childernDivRefClasses?: string;
   parentDivRefClasses?: string;
-  doUseMediaQuery?: boolean;
 }> = ({
   buttonText = 'btn',
   children,
@@ -19,30 +17,22 @@ const Accordion: FC<{
   iconClasses = '',
   childernDivRefClasses = '',
   parentDivRefClasses = '',
-  doUseMediaQuery = false,
 }) => {
   const accordRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   const [isActive, setActive] = useState<boolean>(false);
-  const matches = useMediaQuery('(min-width: 768px)');
   useEffect(() => {
     if (accordRef.current !== null) {
-      if (doUseMediaQuery && matches) {
-        accordRef.current.style.height = `${accordRef?.current.scrollHeight}px`;
-        setActive(true);
-      } else {
-        accordRef.current.style.height = '0px';
-      }
+      setActive(false);
+      accordRef.current.style.height = '0px';
     }
-  }, [accordRef, doUseMediaQuery, matches]);
+  }, [accordRef]);
   const onButtonClick = () => {
     if (!isActive && accordRef.current) {
       accordRef.current.style.height = `${accordRef?.current.scrollHeight}px`;
       setActive(true);
     } else {
-      if (!doUseMediaQuery) {
-        setActive(false);
-        accordRef.current.style.height = '0px';
-      }
+      setActive(false);
+      accordRef.current.style.height = '0px';
     }
   };
   return (
