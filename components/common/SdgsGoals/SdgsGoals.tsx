@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { sdgsGoals, SdgsGoalsDataType } from './goals.data';
-
+import cx from 'clsx';
 const SdgsGoals = (): JSX.Element => {
   return (
     <section
@@ -24,7 +24,7 @@ const SdgsGoals = (): JSX.Element => {
             width={300}
             height={500}
             layout="fixed"
-            className="w-full object-cover object-center"
+            className={cx(v.bgImgClasses || '')}
             priority={true}
           />
           <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-1 bottom-3 left-3">
