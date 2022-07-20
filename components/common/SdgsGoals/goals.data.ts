@@ -79,9 +79,10 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
   },
   {
     id: 10,
-    bgImg: '/assets/images/mama-plantain.jpeg',
-    goalImg: '/assets/goals-images/10.jpeg',
+    bgImg: '/assets/goals-bg-images/reduced-inequality.jpg',
+    goalImg: '/assets/goals-images/10.png',
     goalDescription: 'Reduce inequality within and among countries.',
+    bgImgClasses: '',
   },
   {
     id: 11,
