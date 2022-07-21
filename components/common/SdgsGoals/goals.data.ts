@@ -12,7 +12,7 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
     bgImg: '/assets/goals-bg-images/social-income.jpg',
     goalImg: '/assets/goals-images/1.png',
     goalDescription: 'End poverty in all its forms everywhere.',
-    bgImgClasses: 'object-cover -scale-x-[1]',
+    bgImgClasses: '-scale-x-[1]',
   },
   {
     id: 2,
@@ -36,14 +36,14 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
     goalImg: '/assets/goals-images/4.webp',
     goalDescription:
       'Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all.',
-    bgImgClasses: 'object-center object-cover',
+    bgImgClasses: 'object-center',
   },
   {
     id: 5,
     bgImg: '/assets/goals-bg-images/female-equality.jpg',
     goalImg: '/assets/goals-images/5.webp',
     goalDescription: 'Achieve gender equality and empower all women and girls.',
-    bgImgClasses: '!object-top object-cover',
+    bgImgClasses: '!object-top',
   },
   {
     id: 6,
@@ -67,7 +67,7 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
     goalImg: '/assets/goals-images/8.png',
     goalDescription:
       'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.',
-    bgImgClasses: 'object-top object-cover',
+    bgImgClasses: 'object-top',
   },
   {
     id: 9,
@@ -75,59 +75,59 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
     goalImg: '/assets/goals-images/9.webp',
     goalDescription:
       'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation.',
-    bgImgClasses: 'object-cover !object-center',
+    bgImgClasses: '!object-center',
   },
   {
     id: 10,
     bgImg: '/assets/goals-bg-images/reduced-inequality.jpg',
     goalImg: '/assets/goals-images/10.png',
     goalDescription: 'Reduce inequality within and among countries.',
-    bgImgClasses: '',
+    bgImgClasses: '!object-center',
   },
   {
     id: 11,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/home-and-forest.jpg',
     goalImg: '/assets/goals-images/11.jpeg',
     goalDescription:
       'Make cities and human settlements inclusive, safe, resilient and sustainable.',
   },
   {
     id: 12,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/boxed-water-is-better.jpg',
     goalImg: '/assets/goals-images/12.png',
     goalDescription: 'Ensure sustainable consumption and production patterns.',
   },
   {
     id: 13,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/ice-breaking.jpg',
     goalImg: '/assets/goals-images/13.png',
     goalDescription:
       'Take urgent action to combat climate change and its impacts.',
   },
   {
     id: 14,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/fish-in-water.jpg',
     goalImg: '/assets/goals-images/14.jpeg',
     goalDescription:
       'Conserve and sustainably use the oceans, seas and marine resources for sustainable development.',
   },
   {
     id: 15,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/antelopes.jpg',
     goalImg: '/assets/goals-images/15.png',
     goalDescription:
       'Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss.',
   },
   {
     id: 16,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/law-firm.jpg',
     goalImg: '/assets/goals-images/16.jpeg',
     goalDescription:
       'Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels.',
   },
   {
     id: 17,
-    bgImg: '/assets/images/mama-plantain.jpeg',
+    bgImg: '/assets/goals-bg-images/team-work.jpg',
     goalImg: '/assets/goals-images/17.jpeg',
     goalDescription:
       'Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development.',

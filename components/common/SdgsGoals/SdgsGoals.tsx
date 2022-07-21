@@ -24,7 +24,7 @@ const SdgsGoals = (): JSX.Element => {
             width={300}
             height={500}
             layout="fixed"
-            className={cx(v.bgImgClasses || '')}
+            className={cx(v.bgImgClasses || '', 'object-cover')}
             priority={true}
           />
           <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-1 bottom-3 left-3">
