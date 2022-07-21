@@ -7,11 +7,18 @@ const SdgsGoals = (): JSX.Element => {
       aria-labelledby="sdgs-gols"
       className="p-0 md:px-[50px] md:py-[50px] grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-1"
     >
-      <div className="w-full md:w-[300px] flex items-start">
-        <h2 id="sdgs-gols" className="uppercase font-secondary text-3xl">
-          Sdgs <br />
-          goals
-        </h2>
+      <div className="h-[500px] flex items-center justify-center">
+        <div className="w-8/12">
+          <Image
+            src="/assets/goals-bg-images/global-goals.png"
+            alt="global goals"
+            width={150}
+            height={150}
+            layout="responsive"
+            className="object-contain object-center"
+            priority={true}
+          />
+        </div>
       </div>
       {sdgsGoals.map((v: SdgsGoalsDataType, idx: number) => (
         <div
