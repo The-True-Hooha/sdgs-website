@@ -11,7 +11,7 @@ const Navbar = () => {
       document.body.scrollTop > 80 ||
       document.documentElement.scrollTop > 80
     ) {
-      setNavBg('bg-[rgba(255, 255, 255, 0.46)] backdrop-blur-[2.1px]');
+      setNavBg('bg-white shadow-md');
     } else {
       setNavBg('');
     }
@@ -21,7 +21,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', scrollHandler);
     };
-  }, []);
+  });
   return (
     <div className="w-full fixed top-0 z-[999]">
       <div className="w-full lg:hidden">

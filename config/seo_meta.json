@@ -1,0 +1,25 @@
+{
+  "title": "SDGs Fupre Website",
+  "titleTemplate": "%s - SDGs Fupre",
+  "description": "SDGs Fupre Website - https://www.nextjs.org/commerce",
+  "openGraph": {
+    "title": "SDGs | Powered by Sdgs Fupre",
+    "description": "SDGs Fupre Website - https://www.nextjs.org/commerce",
+    "type": "website",
+    "url": "https://nextjs.org/commerce",
+    "site_name": "SDGs Fupre Website",
+    "images": [
+      {
+        "url": "/assets/images/fupre-sdsn.png",
+        "width": "800",
+        "height": "600",
+        "alt": "SDGs Fupre Website"
+      }
+    ]
+  },
+  "twitter": {
+    "handle": "@nextjs",
+    "site": "@nextjs",
+    "cardType": "summary_large_image"
+  }
+}

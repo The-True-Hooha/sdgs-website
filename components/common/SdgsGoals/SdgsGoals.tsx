@@ -49,7 +49,7 @@ const SdgsGoals = (): JSX.Element => {
             <h3 className="font-secondary font-bold text-sm uppercase mb-2 text-white">
               Goal {v.id}
             </h3>
-            <p className="font-primary text-md text-white">
+            <p className="font-primary text-md text-white text-justify">
               {v.goalDescription}
             </p>
           </div>
