@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 const ContactUs: NextPage = () => {
   return (
     <div>
-      <div></div>
+      <div> Contact us </div>
     </div>
   );
 };

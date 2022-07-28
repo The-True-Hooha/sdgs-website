@@ -96,9 +96,8 @@ const LgNavbar: React.FunctionComponent<{
                         key={subLink.id}
                         className="font-secondary font-semibold text-[10px] border-b border-solid border-gray-100/50"
                       >
-                        <Link href="/">
+                        <Link href={subLink.url}>
                           <a className="block px-[10px] py-[15px] hover:bg-emerald-400 rounded-md hover:text-white">
-                            {' '}
                             {subLink.label}
                           </a>
                         </Link>
