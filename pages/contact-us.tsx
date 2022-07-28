@@ -1,10 +1,13 @@
+import Layout from '@components/common/layout';
 import { NextPage } from 'next';
 
 const ContactUs: NextPage = () => {
   return (
-    <div>
-      <div> Contact us </div>
-    </div>
+    <Layout>
+      <div>
+        <div> Contact us </div>
+      </div>
+    </Layout>
   );
 };
 
