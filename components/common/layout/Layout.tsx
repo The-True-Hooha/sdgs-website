@@ -4,6 +4,7 @@ import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { LoadingDots } from '@components/ui';
 import dynamic from 'next/dynamic';
+import { HeroType } from '../Hero/Hero';
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -22,6 +23,7 @@ type Layout = {
   cssClasses?: string;
   useHero?: boolean;
   cleanMainCss?: boolean;
+  heroDetails?: HeroType;
 };
 
 const Layout: React.FunctionComponent<Layout> = ({
@@ -29,6 +31,10 @@ const Layout: React.FunctionComponent<Layout> = ({
   cssClasses = '',
   useHero = true,
   cleanMainCss = false,
+  heroDetails = {
+    label: '',
+    bgImgUrl: '',
+  },
 }): JSX.Element => {
   return (
     <div className="w-full h-auto overflow-hidden">
@@ -40,7 +46,7 @@ const Layout: React.FunctionComponent<Layout> = ({
           'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
         })}
       >
-        {useHero && <HeroView />}
+        {useHero && <HeroView {...heroDetails} />}
         {children}
       </main>
       <Footer />

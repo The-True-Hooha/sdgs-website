@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-type HeroType = {
+export type HeroType = {
   label?: string;
   bgImgUrl?: string;
   overlayBgCss?: string;
