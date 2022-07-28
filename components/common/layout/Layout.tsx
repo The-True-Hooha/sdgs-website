@@ -11,13 +11,13 @@ const Layout: React.FunctionComponent<Layout> = ({
   cssClasses = '',
 }): JSX.Element => {
   return (
-    <>
+    <div className="w-full h-auto overflow-hidden">
       <header className="w-full">
         <Navbar />
       </header>
       <main className={cx(cssClasses)}>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
