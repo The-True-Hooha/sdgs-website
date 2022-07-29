@@ -7,7 +7,7 @@ import { ArrowLeft, ChevronRight } from '@components/icons';
 import cx from 'clsx';
 import { useState } from 'react';
 import Link from 'next/link';
-
+import { useRouter } from 'next/router';
 const MobileNavbar: React.FunctionComponent<{
   navBg?: string;
 }> = ({ navBg = '' }) => {
@@ -15,6 +15,7 @@ const MobileNavbar: React.FunctionComponent<{
   const [openMainMenu, setOpenMainMenuState] = useState<boolean>(true);
   const [openSubMainMenu, setOpenSubMainMenuState] = useState<boolean>(false);
   const [subMenuDataIdx, setSubMenuDataIdx] = useState<number>(-1);
+  const router = useRouter();
 
   const openSubMenu = (idx: number) => {
     setOpenMainMenuState(false);
@@ -31,6 +32,13 @@ const MobileNavbar: React.FunctionComponent<{
       closeSubMenu();
     }
     toggleSidebar();
+  };
+  const handleRouteClick = (e: any, useRef: boolean, href: URL) => {
+    e.preventDefault();
+    if ( useRef ) {
+      toggleMenuBtn();
+      router.push(href);
+    }
   };
 
   return (
@@ -127,14 +135,23 @@ const MobileNavbar: React.FunctionComponent<{
                       {menuLinks[subMenuDataIdx]?.subMenu.map(
                         (subMenu: SubMenuType) => (
                           <div className="w-full py-[8px]" key={subMenu.id}>
-                            <h2 className="font-secondary font-bold text-sm flex items-center">
+                            <button
+                              className="font-secondary font-bold text-sm flex items-center"
+                              onClick={(e) =>
+                                handleRouteClick(
+                                  e,
+                                  subMenu.links.length < 1,
+                                  subMenu.url
+                                )
+                              }
+                            >
                               <span className="align-middle">
                                 {subMenu.label}
                               </span>
                               {subMenu.links.length < 1 && (
                                 <ChevronRight className="h-[24px] w-[24px] text-red-400" />
                               )}
-                            </h2>
+                            </button>
                             <ul className="pl-[16px]">
                               {subMenu.links.map((link: LinkType) => (
                                 <li
