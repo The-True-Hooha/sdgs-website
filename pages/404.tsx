@@ -3,9 +3,12 @@ import Link from 'next/link';
 
 export default function FourOhFour() {
   return (
-    <Layout cssClasses="grid place-items-center min-h-[500px] h-[80vh]" useHero={false}>
-      <div className="flex flex-col items-center">
-        <h1 className="font-secondary text-2xl">
+    <Layout
+      cssClasses="grid place-items-center min-h-[500px] h-[80vh]"
+      useHero={false}
+    >
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="font-secondary text-2xl text-center">
           <span className="font-bold">404 </span>| Page Not Found
         </h1>
         <Link href="/">

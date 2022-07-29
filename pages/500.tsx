@@ -7,8 +7,8 @@ export default function FourOhFour() {
       cssClasses="grid place-items-center min-h-[500px] h-[80vh]"
       useHero={false}
     >
-      <div className="flex flex-col items-center">
-        <h1 className="font-secondary text-2xl">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="font-secondary text-2xl text-center">
           <span className="font-bold">500 </span>| Server-side error occurred
         </h1>
         <Link href="mailto:ereyomioluwaseyi@gmail.com">

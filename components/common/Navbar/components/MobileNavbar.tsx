@@ -6,6 +6,7 @@ import { LinkType, MenuListType, SubMenuType } from '../model/LinkListType';
 import { ArrowLeft, ChevronRight } from '@components/icons';
 import cx from 'clsx';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const MobileNavbar: React.FunctionComponent<{
   navBg?: string;
@@ -56,14 +57,18 @@ const MobileNavbar: React.FunctionComponent<{
           ></div>
         </div>
         <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
-          <Image
-            src="/assets/images/fupre-sdsn.png"
-            alt="main-logo"
-            height={50}
-            width={50}
-            layout="fixed"
-            priority={true}
-          />
+          <Link href="/">
+            <a>
+              <Image
+                src="/assets/images/fupre-sdsn.png"
+                alt="main-logo"
+                height={50}
+                width={50}
+                layout="fixed"
+                priority={true}
+              />
+            </a>
+          </Link>
         </div>
         <div></div>
       </nav>
@@ -136,8 +141,12 @@ const MobileNavbar: React.FunctionComponent<{
                                   key={link.id}
                                   className="py-[8px] font-primary flex items-center"
                                 >
-                                  <span> {link.label}</span>
-                                  <ChevronRight className="h-[24px] w-[24px] text-red-400" />
+                                  <Link href={link.url} className="w-full">
+                                    <a className="flex items-center">
+                                      <span> {link.label}</span>
+                                      <ChevronRight className="h-[24px] w-[24px] text-red-400" />
+                                    </a>
+                                  </Link>
                                 </li>
                               ))}
                             </ul>

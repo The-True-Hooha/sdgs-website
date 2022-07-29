@@ -20,7 +20,6 @@ const Intro = (): JSX.Element => {
             height={500}
             layout="fixed"
             className="object-cover object-center"
-            priority={true}
           />
         </div>
       </div>

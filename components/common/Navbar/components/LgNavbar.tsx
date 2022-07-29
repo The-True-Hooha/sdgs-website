@@ -24,15 +24,19 @@ const LgNavbar: React.FunctionComponent<{
                   className="w-[50px] h-[50px] rounded-full overflow-hidden"
                   key={`${index}-img-div`}
                 >
-                  <Image
-                    key={`${index}-img`}
-                    src="/assets/images/fupre-sdsn.png"
-                    alt="main-logo"
-                    height={50}
-                    width={50}
-                    layout="fixed"
-                    priority={true}
-                  />
+                  <Link href="/">
+                    <a>
+                      <Image
+                        key={`${index}-img`}
+                        src="/assets/images/fupre-sdsn.png"
+                        alt="main-logo"
+                        height={50}
+                        width={50}
+                        layout="fixed"
+                        priority={true}
+                      />
+                    </a>
+                  </Link>
                 </div>
               ) : (
                 ''
@@ -125,7 +129,6 @@ const LgNavbar: React.FunctionComponent<{
                     height={500}
                     layout="fixed"
                     className="object-cover object-center"
-                    priority={true}
                   />
                 </div>
               </div>

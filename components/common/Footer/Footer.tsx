@@ -22,7 +22,6 @@ const Footer = (): JSX.Element => {
                 width={64}
                 layout="fixed"
                 className="object-fill object-center"
-                priority={true}
               />
             </div>
             <div className="">
