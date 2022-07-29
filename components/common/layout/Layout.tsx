@@ -39,7 +39,7 @@ const Layout: React.FunctionComponent<Layout> = ({
         <Navbar />
       </header>
       <main
-        className={cx(cssClasses, {
+        className={cx(cssClasses,{
           'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
         })}
       >

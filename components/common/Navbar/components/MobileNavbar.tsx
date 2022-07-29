@@ -33,7 +33,7 @@ const MobileNavbar: React.FunctionComponent<{
     }
     toggleSidebar();
   };
-  const handleRouteClick = (e: any, useRef: boolean, href: URL) => {
+  const handleRouteClick = (e: any, useRef: boolean, href: string) => {
     e.preventDefault();
     if ( useRef ) {
       toggleMenuBtn();
