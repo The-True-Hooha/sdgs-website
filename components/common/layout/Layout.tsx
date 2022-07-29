@@ -31,10 +31,7 @@ const Layout: React.FunctionComponent<Layout> = ({
   cssClasses = '',
   useHero = true,
   cleanMainCss = false,
-  heroDetails = {
-    label: '',
-    bgImgUrl: '',
-  },
+  heroDetails = {},
 }): JSX.Element => {
   return (
     <div className="w-full h-auto overflow-hidden">
