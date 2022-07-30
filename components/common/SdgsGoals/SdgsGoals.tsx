@@ -32,7 +32,6 @@ const SdgsGoals = (): JSX.Element => {
             height={500}
             layout="fixed"
             className={cx(v.bgImgClasses || '', 'object-cover')}
-            priority={true}
           />
           <div className="absolute w-[100px] h-[100px] md:w-[150px] md:h-[150px] z-1 bottom-3 left-3">
             <Image
@@ -42,7 +41,6 @@ const SdgsGoals = (): JSX.Element => {
               height={150}
               layout="responsive"
               className="object-cover object-center"
-              priority={true}
             />
           </div>
           <div className="absolute top-0 w-full h-[500px] z-[2] flex flex-col justify-center p-2 opacity-0 hover:opacity-100 bg-gray-200/40 backdrop-blur">
