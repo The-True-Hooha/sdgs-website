@@ -39,6 +39,20 @@ const images = [
   'Picture32.png',
   'Picture33.jpeg',
   'Picture34.jpeg',
+  'Picture35.jpeg',
+  'Picture36.jpeg',
+  'Picture37.jpeg',
+  'Picture38.jpeg',
+  'Picture39.jpeg',
+  'Picture40.jpeg',
+  'Picture41.jpeg',
+  'Picture42.jpeg',
+  'Picture43.jpeg',
+  'Picture44.jpeg',
+  'Picture45.jpeg',
+  'Picture46.jpeg',
+  'Picture47.jpeg',
+  'Picture48.jpeg',
 ];
 const PhotoGallery: NextPage = () => {
   return (
@@ -52,7 +66,7 @@ const PhotoGallery: NextPage = () => {
           {images.map((v: string, idx: number) => (
             <div
               key={idx}
-              className="w-[236px] mb-[10px] overflow-hidden rounded-lg"
+              className="w-[180px] md:w-[236px] mb-[10px] overflow-hidden rounded-lg"
             >
               <img
                 src={`/assets/photo-gallery/${v}`}
