@@ -18,7 +18,7 @@ const Home: NextPage = ( { allPosts, preview }: any ) => {
 
 export default Home;
 
-async function getStaticProps({ preview = false }) {
+export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
 
   return {
