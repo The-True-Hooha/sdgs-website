@@ -5,6 +5,7 @@ import Layout from '@components/common/layout';
 import { getAllPostsForHome } from 'lib/api';
 
 const Home: NextPage = ({ allPosts, preview }: any) => {
+  console.log(allPosts);
   return (
     <Layout cleanMainCss={true} useHero={false}>
       <Intro />
