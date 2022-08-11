@@ -1,4 +1,4 @@
-import { Blogcard } from '@components/ui';
+import { BlogPreviewCard } from '@components/ui';
 
 const blogPosts = [
   {
@@ -43,7 +43,7 @@ const blogPosts = [
   },
 ];
 
-const Blog = (): JSX.Element => {
+const BlogSection = ({ posts }: any): JSX.Element => {
   return (
     <section
       aria-labelledby="blogs"
@@ -55,11 +55,20 @@ const Blog = (): JSX.Element => {
           Blog
         </h2>
       </div>
-      {blogPosts.map((post, index) => (
-        <Blogcard key={index} />
+      {posts.map(({ node }: any) => (
+        <BlogPreviewCard
+          key={node.slug}
+          title={node.title}
+          coverImage={node.featuredImage?.node?.sourceUrl || ''}
+          date={node.date}
+          author={node.author}
+          slug={node.slug}
+          excerpt={node.excerpt}
+          categories={node.categories.edges.map((v: any) => v.node)}
+        />
       ))}
     </section>
   );
 };
 
-export default Blog;
+export default BlogSection;
