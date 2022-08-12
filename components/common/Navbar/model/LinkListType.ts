@@ -14,5 +14,6 @@ export type LinkType = {
   label: string;
   urlTarget: '_blank' | '_self' | '_parent' | '_top';
   url: string;
-  cssClasses?: string;
+  cssClasses: string;
+  useCMSPage: boolean;
 };

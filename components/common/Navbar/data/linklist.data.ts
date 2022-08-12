@@ -1,4 +1,4 @@
-import { MenuListType } from '../model/LinkListType';
+import { LinkType, MenuListType } from '../model/LinkListType';
 
 export const menuLinks: MenuListType[] = [
   {
@@ -11,6 +11,8 @@ export const menuLinks: MenuListType[] = [
         label: 'About us',
         urlTarget: '_self',
         url: 'about-us',
+        useCMSPage: false,
+        cssClasses: '',
         links: [
           {
             id: 1.11,
@@ -18,6 +20,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'faqs',
             cssClasses: '',
+            useCMSPage: true,
           },
         ],
       },
@@ -26,6 +29,8 @@ export const menuLinks: MenuListType[] = [
         label: 'Leadership',
         urlTarget: '_self',
         url: 'leadership',
+        useCMSPage: false,
+        cssClasses: '',
         links: [
           {
             id: 1.21,
@@ -33,6 +38,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'organization-chart',
             cssClasses: '',
+            useCMSPage: false,
           },
           {
             id: 1.22,
@@ -40,6 +46,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'past-administrator',
             cssClasses: '',
+            useCMSPage: false,
           },
         ],
       },
@@ -48,6 +55,8 @@ export const menuLinks: MenuListType[] = [
         label: 'Funding',
         urlTarget: '_self',
         url: 'funding',
+        useCMSPage: false,
+        cssClasses: '',
         links: [
           {
             id: 1.31,
@@ -55,6 +64,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'top-contributor',
             cssClasses: '',
+            useCMSPage: false,
           },
           {
             id: 1.32,
@@ -62,6 +72,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'structured-resources-contributors',
             cssClasses: '',
+            useCMSPage: false,
           },
           {
             id: 1.33,
@@ -69,6 +80,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'funding-windows',
             cssClasses: '',
+            useCMSPage: false,
           },
           {
             id: 1.34,
@@ -76,6 +88,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'regular-respurces-contributors',
             cssClasses: '',
+            useCMSPage: false,
           },
         ],
       },
@@ -92,6 +105,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'sdgs',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 2.2,
@@ -99,6 +114,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'hdr',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 2.3,
@@ -106,6 +123,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'dcs',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 2.4,
@@ -113,6 +132,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'strategic-initiatives',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 2.5,
@@ -120,6 +141,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'our-expertise',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
     ],
   },
@@ -133,6 +156,8 @@ export const menuLinks: MenuListType[] = [
         label: 'News Centre',
         urlTarget: '_self',
         url: 'news-centre',
+        useCMSPage: false,
+        cssClasses: '',
         links: [
           {
             id: 3.11,
@@ -140,6 +165,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'media-contacts',
             cssClasses: '',
+            useCMSPage: false,
           },
         ],
       },
@@ -149,6 +175,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'results',
         links: [],
+        useCMSPage: true,
+        cssClasses: '',
       },
       {
         id: 3.3,
@@ -156,6 +184,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'publication',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 3.4,
@@ -163,6 +193,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'blog',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 3.5,
@@ -170,6 +202,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'stories',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 3.6,
@@ -177,6 +211,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'photo-library',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
     ],
   },
@@ -191,6 +227,8 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'contact-us',
         links: [],
+        useCMSPage: false,
+        cssClasses: '',
       },
       {
         id: 4.2,
@@ -198,7 +236,36 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'careers',
         links: [],
+        useCMSPage: true,
+        cssClasses: '',
       },
     ],
   },
 ];
+
+export const getCMSPage = (): LinkType[] => {
+  //infinitly flat the array
+  return [
+    menuLinks
+      .map((v) =>
+        v.subMenu
+          .filter((f) => f.useCMSPage)
+          .map((g) => ({
+            id: g.id,
+            label: g.label,
+            urlTarget: g.urlTarget,
+            url: g.url,
+            cssClasses: '',
+            useCMSPage: g.useCMSPage,
+          }))
+      )
+      .filter((q) => q.length > 0),
+    menuLinks
+      .map((v) =>
+        v.subMenu
+          .map((q) => q.links.filter((g) => g.useCMSPage))
+          .filter((r) => r.length > 0)
+      )
+      .filter((q) => q.length > 0),
+  ].flat(Infinity) as LinkType[];
+};

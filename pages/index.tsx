@@ -4,8 +4,7 @@ import { Intro, Events, BlogSection, SdgsGoals } from '@components/common';
 import Layout from '@components/common/layout';
 import { getAllPostsForHome } from 'lib/api';
 
-const Home: NextPage = ({ allPosts, preview }: any) => {
-  console.log(allPosts);
+const Home: NextPage = ({ allPosts }: any) => {
   return (
     <Layout cleanMainCss={true} useHero={false}>
       <Intro />
@@ -20,7 +19,6 @@ export default Home;
 
 export async function getStaticProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
-
   return {
     props: { allPosts, preview },
   };

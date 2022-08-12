@@ -66,6 +66,7 @@ export async function getAllPostsForHome(preview: any) {
       posts(first: 5, where: { orderby: { field: DATE, order: DESC } }) {
         edges {
           node {
+            id
             title
             excerpt
             slug
@@ -112,7 +113,7 @@ export async function getAllPostsForHome(preview: any) {
 export async function getPostAndMorePosts(
   slug: any,
   preview: any,
-  previewData: { post: any }
+  previewData: any
 ) {
   const postPreview = preview && previewData?.post;
   // The slug may be the id of an unpublished post
@@ -223,4 +224,62 @@ export async function getPostAndMorePosts(
   if (data.posts.edges.length > 2) data.posts.edges.pop();
 
   return data;
+}
+
+export const getPages = async () => {
+  const data = await fetchAPI(
+    `
+     query AllPages {
+      pages(first: 5, where: { orderby: { field: DATE, order: DESC } }) {
+        edges {
+          node {
+            id
+            title
+            slug
+            date
+            content
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            author {
+              node {
+                name
+                firstName
+                lastName
+                avatar {
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }`
+  );
+  return data;
+};
+export async function getPage(slug: any) {
+  const data = await fetchAPI(
+    `
+    query PreviewPage($id: ID!, $idType: PageIdType!) {
+      page(id: $id, idType: $idType) {
+        id
+        databaseId
+        title
+        uri
+        date
+        content
+      }
+    }
+  `,
+    {
+      variables: {
+        id: slug,
+        idType: 'URI',
+      },
+    }
+  );
+  return data.page;
 }
