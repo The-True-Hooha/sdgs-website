@@ -38,12 +38,12 @@ const Layout: React.FunctionComponent<Layout> = ({
       <header className="w-full">
         <Navbar />
       </header>
+      {useHero && <HeroView {...heroDetails} />}
       <main
-        className={cx(cssClasses,{
+        className={cx(cssClasses, {
           'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
         })}
       >
-        {useHero && <HeroView {...heroDetails} />}
         {children}
       </main>
       <Footer />

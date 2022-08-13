@@ -269,3 +269,7 @@ export const getCMSPage = (): LinkType[] => {
       .filter((q) => q.length > 0),
   ].flat(Infinity) as LinkType[];
 };
+
+export const getPageDataBySlug = (slug: string): LinkType | null => {
+  return getCMSPage().find((v) => v.url === slug) || null;
+};

@@ -1,25 +1,42 @@
 import Layout from '@components/common/layout';
-import { getCMSPage } from '@components/common/Navbar/data/linklist.data';
+import {
+  getCMSPage,
+  getPageDataBySlug,
+} from '@components/common/Navbar/data/linklist.data';
 import { LinkType } from '@components/common/Navbar/model/LinkListType';
-import { getAllPostsWithSlug, getPage, getPostAndMorePosts } from 'lib/api';
+import { getPage } from 'lib/api';
 import { GetStaticPaths, GetStaticProps } from 'next/types';
 
-export default function Page({ data }: any) {
-  console.log(data);
+export default function Page({
+  data,
+  pageLinkData,
+  slug,
+}: {
+  data: any;
+  pageLinkData: LinkType | null;
+  slug: string;
+}) {
   return (
     <Layout
-      cssClasses=""
-      useHero={false}
+      cssClasses="p-0 md:px-[50px]"
+      heroDetails={{
+        label: pageLinkData?.label,
+      }}
     >
-      <div dangerouslySetInnerHTML={{ __html: data.content }} />
+      <div
+        className=""
+        dangerouslySetInnerHTML={{ __html: data?.content || '' }}
+      />
     </Layout>
   );
 }
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const data = await getPage(params?.slug);
+  const data = await getPage(params!.slug);
   return {
     props: {
       data,
+      pageLinkData: getPageDataBySlug(params!.slug as string),
+      slug: params?.['slug'],
     },
     revalidate: 10,
   };
