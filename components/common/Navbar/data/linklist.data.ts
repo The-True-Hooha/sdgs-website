@@ -20,7 +20,7 @@ export const menuLinks: MenuListType[] = [
             urlTarget: '_self',
             url: 'faqs',
             cssClasses: '',
-            useCMSPage: true,
+            useCMSPage: false,
           },
         ],
       },
@@ -175,7 +175,7 @@ export const menuLinks: MenuListType[] = [
         urlTarget: '_self',
         url: 'results',
         links: [],
-        useCMSPage: true,
+        useCMSPage: false,
         cssClasses: '',
       },
       {

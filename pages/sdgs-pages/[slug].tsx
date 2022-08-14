@@ -24,7 +24,7 @@ export default function Page({
       }}
     >
       <div
-        className=""
+        className="w-full"
         dangerouslySetInnerHTML={{ __html: data?.content || '' }}
       />
     </Layout>

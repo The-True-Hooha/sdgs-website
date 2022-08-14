@@ -33,11 +33,16 @@ const MobileNavbar: React.FunctionComponent<{
     }
     toggleSidebar();
   };
-  const handleRouteClick = (e: any, useRef: boolean, href: string) => {
+  const handleRouteClick = (
+    e: any,
+    useRef: boolean,
+    href: string,
+    useCMSPage: boolean
+  ) => {
     e.preventDefault();
-    if ( useRef ) {
+    if (useRef) {
       toggleMenuBtn();
-      router.push(href);
+      router.push(`/${useCMSPage === true ? 'sdgs-pages/' : ''}${href}`);
     }
   };
 
@@ -141,7 +146,8 @@ const MobileNavbar: React.FunctionComponent<{
                                 handleRouteClick(
                                   e,
                                   subMenu.links.length < 1,
-                                  subMenu.url
+                                  subMenu.url,
+                                  subMenu.useCMSPage
                                 )
                               }
                             >
@@ -158,7 +164,14 @@ const MobileNavbar: React.FunctionComponent<{
                                   key={link.id}
                                   className="py-[8px] font-primary flex items-center"
                                 >
-                                  <Link href={link.url} className="w-full">
+                                  <Link
+                                    href={`/${
+                                      link.useCMSPage === true
+                                        ? 'sdgs-pages/'
+                                        : ''
+                                    }${link.url}`}
+                                    className="w-full"
+                                  >
                                     <a className="flex items-center">
                                       <span> {link.label}</span>
                                       <ChevronRight className="h-[24px] w-[24px] text-red-400" />
