@@ -5,98 +5,88 @@ import Elemike from '../public/assets/images/leadership/dr-elemike.jpg'
 import Adedoyin from '../public/assets/images/leadership/adedoyin.jpg'
 import Adekunle from '../public/assets/images/leadership/adekunle.jpg'
 import Bekenawei from '../public/assets/images/leadership/bekenawei.jpg'
-import Adeyemi from '../public/assets/images/leadership/dr-adeyemi.jpg'
+import Akinyemi from "../public/assets/images/leadership/dr-akinyemi.jpg"
 import Geraldine from '../public/assets/images/leadership/geraldine.jpg'
 import Ibezim from '../public/assets/images/leadership/ibezim.jpg'
 import Laurelta from '../public/assets/images/leadership/laurelta.jpg'
 import Makun from '../public/assets/images/leadership/makun.jpg'
 import Ogwuche from '../public/assets/images/leadership/ogwuche.jpg'
 import Peace from '../public/assets/images/leadership/peace.jpg'
-import Dori from '../public/assets/images/leadership/prof-dori.jpg'
+import Doris from '../public/assets/images/leadership/prof-dori.jpg'
 import Osafile from '../public/assets/images/leadership/prof-osafile.jpg'
 import Suraju from '../public/assets/images/leadership/suraju.jpg'
 
 const leadershipData = [
   {
-    name: '',
-    image: '',
-    title: ""
+    name: "Dr Akinyemi Olufemi Ogunkeyede",
+    image: <Image src={Akinyemi} width={100} alt="dr-akinyemi"/>,
+    position: "Director FUPRE-SDSN"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr (Mrs.) Doris Fovwe Ogeleka',
+    image: <Image src={Doris} width={100} alt="dr mrs doris fovwe"/>,
+    title: "Pioneer chair, Sustainable Development Solutions Network (SDSN)"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr Mrs. Omosede E. Osafile',
+    image: <Image src={Osafile} width={100} alt="dr mrs osafile"/>,
+    title: "Ag. Director Sub-Degree Program FUPRE"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr. (Mrs) Laurelta Esivweneta Tudararo-Aherobo (MNES, MASM, MOWSD)',
+    image: <Image src={Laurelta} width={100} alt="dr mrs laurelta Esivweneta"/>,
+    title: "Acting Director of the Integrated Institute of Environment and Development (IIED), FUPRE."
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr. (Mrs). Ogwuche Christiana Ene',
+    image: <Image src={Ogwuche} width={100} alt="Dr. (Mrs). Ogwuche Christiana Ene"/>,
+    title: "Coordinator of the Entrepreneurship Group of FUPRE-SDSN"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr Adedoyin A.Adebayo',
+    image: <Image src={Adedoyin} width={100} alt="Dr Adedoyin A.Adebayo"/>,
+    title: "Advocate of the 17 SDG goals especially climate matters, gender equality and partnerships for goals"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Dr Suraju O. Ogundele',
+    image: <Image src={Suraju} width={100} alt="Dr Suraju O. Ogundele"/>,
+    title: "Coordinator of Youth Development and Skills Thematic Group and Quiz Master of the SDSN"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Adekunle S. Raji',
+    image: <Image src={Adekunle} width={100} alt="Adekunle S. Raji"/>,
+    title: "He is a member of the SDSN since 2016."
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Mrs Geraldine Omonzusi Okojie',
+    image: <Image src={Geraldine} width={100} alt="Mrs Geraldine Omonzusi Okojie"/>,
+    title: "Administrative officer of FUPRE SDSN"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Mrs. Akpobassaha O. Peace',
+    image: <Image src={Peace} width={100} alt="Mrs Akpobassaha O. Peace" />,
+    title: "Physical planner and Developer, a Civil and Structural Engineer"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Mrs. Nwachukwu Bekenawei Endurance',
+    image: <Image src={Bekenawei} width={100} alt="Mrs Nwachukwu Bekenawei Endurance"/>,
+    title: "Keen in educational development of youths"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Esther Ibezim',
+    image: <Image src={Ibezim} width={100} alt="Esther Ibezim"/>,
+    title: "Senior Technologist in the Department of Enviromental Management and Toxicology, FUPRE"
   },
   {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
-  },
-  {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
-  },
-  {
-    name: '',
-    image: '/images/leadership/dr-elemike.jpg',
-    title: ""
+    name: 'Mrs Makun Omowumi Jayeola',
+    image: <Image src={Makun} width={100} alt="Mrs Makun Omowumi Jayeola"/>,
+    title: "Senior Technologist in the Department of Environmental Management and Toxicology, FUPRE"
   }
 ];
 export default function Leadership() {
   return (
     <Layout
-      cssClasses="grid min-h-[2000px] h-[80vh]"
+      cssClasses="min-h-[3000px] h-[80vh]"
       useHero={false}
     >
       <div className="">
