@@ -2,88 +2,98 @@ import Layout from '@components/common/layout';
 import Image from 'next/image';
 import Link from 'next/link';
 import Elemike from '../public/assets/images/leadership/dr-elemike.jpg'
-import Adedoyin from '../public/assets/images/leadership/adedoyin.jpg'
-import Adekunle from '../public/assets/images/leadership/adekunle.jpg'
-import Bekenawei from '../public/assets/images/leadership/bekenawei.jpg'
-import Akinyemi from "../public/assets/images/leadership/dr-akinyemi.jpg"
-import Geraldine from '../public/assets/images/leadership/geraldine.jpg'
-import Ibezim from '../public/assets/images/leadership/ibezim.jpg'
-import Laurelta from '../public/assets/images/leadership/laurelta.jpg'
-import Makun from '../public/assets/images/leadership/makun.jpg'
-import Ogwuche from '../public/assets/images/leadership/ogwuche.jpg'
-import Peace from '../public/assets/images/leadership/peace.jpg'
-import Doris from '../public/assets/images/leadership/prof-dori.jpg'
-import Osafile from '../public/assets/images/leadership/prof-osafile.jpg'
-import Suraju from '../public/assets/images/leadership/suraju.jpg'
 
-const leadershipData = [
+export type LeadershipDataT = {
+  id: number
+  name: string
+  image: string
+  title: string
+}
+
+export const leadershipCards: LeadershipDataT[] = [
   {
+    id: 1,
     name: "Dr Akinyemi Olufemi Ogunkeyede",
-    image: <Image src={Akinyemi} width={100} alt="dr-akinyemi"/>,
-    position: "Director FUPRE-SDSN"
+    image: '/assets/images/leadership/dr-akinyemi.jpg',
+    title: "Director FUPRE-SDSN",
+
   },
   {
+    id: 2,
     name: 'Dr (Mrs.) Doris Fovwe Ogeleka',
-    image: <Image src={Doris} width={100} alt="dr mrs doris fovwe"/>,
+    image: '/assets/images/leadership/prof-dori.jpg',
     title: "Pioneer chair, Sustainable Development Solutions Network (SDSN)"
   },
   {
+    id: 3,
     name: 'Dr Mrs. Omosede E. Osafile',
-    image: <Image src={Osafile} width={100} alt="dr mrs osafile"/>,
+    image: '/assets/images/leadership/prof-osafile.jpg',
     title: "Ag. Director Sub-Degree Program FUPRE"
   },
   {
+    id: 4,
     name: 'Dr. (Mrs) Laurelta Esivweneta Tudararo-Aherobo (MNES, MASM, MOWSD)',
-    image: <Image src={Laurelta} width={100} alt="dr mrs laurelta Esivweneta"/>,
+    image: '/assets/images/leadership/laurelta.jpg',
     title: "Acting Director of the Integrated Institute of Environment and Development (IIED), FUPRE."
   },
   {
+    id: 5,
     name: 'Dr. (Mrs). Ogwuche Christiana Ene',
-    image: <Image src={Ogwuche} width={100} alt="Dr. (Mrs). Ogwuche Christiana Ene"/>,
+    image: '/assets/images/leadership/ogwuche.jpg',
     title: "Coordinator of the Entrepreneurship Group of FUPRE-SDSN"
   },
   {
+    id: 6,
     name: 'Dr Adedoyin A.Adebayo',
-    image: <Image src={Adedoyin} width={100} alt="Dr Adedoyin A.Adebayo"/>,
+    image: '/assets/images/leadership/adedoyin.jpg',
     title: "Advocate of the 17 SDG goals especially climate matters, gender equality and partnerships for goals"
   },
   {
+    id: 7,
     name: 'Dr Suraju O. Ogundele',
-    image: <Image src={Suraju} width={100} alt="Dr Suraju O. Ogundele"/>,
+    image: '/assets/images/leadership/suraju.jpg',
     title: "Coordinator of Youth Development and Skills Thematic Group and Quiz Master of the SDSN"
   },
   {
+    id: 8,
     name: 'Adekunle S. Raji',
-    image: <Image src={Adekunle} width={100} alt="Adekunle S. Raji"/>,
+    image: '/assets/images/leadership/adekunle.jpg',
     title: "He is a member of the SDSN since 2016."
   },
   {
+    id: 9,
     name: 'Mrs Geraldine Omonzusi Okojie',
-    image: <Image src={Geraldine} width={100} alt="Mrs Geraldine Omonzusi Okojie"/>,
+    image: '/assets/images/leadership/geraldine.jpg',
     title: "Administrative officer of FUPRE SDSN"
   },
   {
+    id: 10,
     name: 'Mrs. Akpobassaha O. Peace',
-    image: <Image src={Peace} width={100} alt="Mrs Akpobassaha O. Peace" />,
+    image: '/assets/images/leadership/peace.jpg',
     title: "Physical planner and Developer, a Civil and Structural Engineer"
   },
   {
+    id: 11,
     name: 'Mrs. Nwachukwu Bekenawei Endurance',
-    image: <Image src={Bekenawei} width={100} alt="Mrs Nwachukwu Bekenawei Endurance"/>,
+    image: '/assets/images/leadership/bekenawei.jpg',
     title: "Keen in educational development of youths"
   },
   {
+    id: 12,
     name: 'Esther Ibezim',
-    image: <Image src={Ibezim} width={100} alt="Esther Ibezim"/>,
+    image: '/assets/images/leadership/ibezim.jpg',
     title: "Senior Technologist in the Department of Enviromental Management and Toxicology, FUPRE"
   },
   {
+    id: 13,
     name: 'Mrs Makun Omowumi Jayeola',
-    image: <Image src={Makun} width={100} alt="Mrs Makun Omowumi Jayeola"/>,
+    image: '/assets/images/leadership/makun.jpg',
     title: "Senior Technologist in the Department of Environmental Management and Toxicology, FUPRE"
   }
 ];
-export default function Leadership() {
+
+
+const leadership = (): JSX.Element => {
   return (
     <Layout
       cssClasses="min-h-[3000px] h-[80vh]"
@@ -126,11 +136,19 @@ export default function Leadership() {
           <Image className='' alt={"dr elemike"} src={Elemike} width={""} height={""}/>
           </div>
         </div>
+
+        <div className='mt-[20px] flex flex-wrap justify-start gap-[10px]'>
+          {leadershipCards.map((v: LeadershipDataT) => (
+            <div key={v.id}>{v.name}{v.image}</div>
+          ))}
+        </div>
       </div>
       </div>
     </Layout>
   );
 }
+
+export default leadership
 
 {/* <div className="flex flex-col items-center justify-center">
         <h1 className="font-secondary text-2xl text-center">
