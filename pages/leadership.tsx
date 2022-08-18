@@ -10,7 +10,7 @@ export type LeadershipDataT = {
   title: string
 }
 
-export const leadershipCards: LeadershipDataT[] = [
+export const leadershipCardData: LeadershipDataT[] = [
   {
     id: 1,
     name: "Dr Akinyemi Olufemi Ogunkeyede",
@@ -93,10 +93,10 @@ export const leadershipCards: LeadershipDataT[] = [
 ];
 
 
-const leadership = (): JSX.Element => {
+const leadership = () => {
   return (
     <Layout
-      cssClasses="min-h-[3000px] h-[80vh]"
+    cssClasses='max-h-[3000px]'
       useHero={false}
     >
       <div className="">
@@ -138,10 +138,20 @@ const leadership = (): JSX.Element => {
         </div>
 
         <div className='mt-[20px] flex flex-wrap justify-start gap-[10px]'>
-          {leadershipCards.map((v: LeadershipDataT) => (
-            <div key={v.id}>{v.name}{v.image}</div>
+          {leadershipCardData.map((v: LeadershipDataT, idx: number) => (
+            <div key={idx} className="w-[100px] h-[100px] mt-6">
+              <Image
+              src={v.image}
+              alt={v.name}
+              width={10}
+              height={10}
+              layout="fixed"
+              />
+              {v.name}{v.title}
+            </div>
           ))}
         </div>
+        <div></div>
       </div>
       </div>
     </Layout>
@@ -149,9 +159,3 @@ const leadership = (): JSX.Element => {
 }
 
 export default leadership
-
-{/* <div className="flex flex-col items-center justify-center">
-        <h1 className="font-secondary text-2xl text-center">
-         Leader ship
-        </h1>
-      </div> */}
