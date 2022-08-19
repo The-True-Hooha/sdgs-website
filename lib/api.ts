@@ -151,6 +151,7 @@ export async function getPostAndMorePosts(
       categories {
         edges {
           node {
+            id
             name
           }
         }
