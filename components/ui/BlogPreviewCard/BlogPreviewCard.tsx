@@ -1,6 +1,7 @@
-import { parseISO, format } from 'date-fns';
 import { ChevronRight } from '@components/icons';
 import Image from 'next/image';
+import Link from 'next/link';
+import BlogDate from '../BlogDate';
 
 type BlogPreviewCardType = {
   title: string;
@@ -23,7 +24,6 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
   excerpt,
   categories,
 }): JSX.Element => {
-  const dateString = parseISO(date);
   return (
     <div className="w-full overflow-hidden">
       <div className="w-full">
@@ -45,7 +45,7 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
       </div>
       <div className="w-full px-5 py-5">
         <h3 className="font-secondary text-sm mb-2">
-          <time dateTime={date}>{format(dateString, 'LLLL	d, yyyy')}</time>
+          <BlogDate dateString={date} />
         </h3>
         <div className="font-secondary font-bold text-md uppercase flex flex-wrap gap-[10px]">
           {categories.map((v: { id: string; name: string }) => (
@@ -58,13 +58,12 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
             dangerouslySetInnerHTML={{ __html: title }}
           ></h4>
           <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
-          <button
-            type="button"
-            className="flex items-center mt-5 hover:font-bold"
-          >
-            <span className="uppercase font-secondary">Read more</span>
-            <ChevronRight className="h-[24px] w-[24px] text-red-400" />
-          </button>
+          <Link href={`/posts/${slug}`}>
+            <a className="flex items-center mt-5 hover:font-bold">
+              <span className="uppercase font-secondary">Read more</span>
+              <ChevronRight className="h-[24px] w-[24px] text-red-400" />
+            </a>
+          </Link>
         </div>
       </div>
     </div>
