@@ -26,9 +26,9 @@ const Home: NextPage = ({ allPosts }: any) => {
             className="w-full min-h-[600px]"
             src="https://www.youtube.com/embed/0XTBYMfZyrM"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </section>
