@@ -12,11 +12,6 @@ export default function Post({
   post: any;
   slug: string;
 }) {
-  console.log({
-    posts,
-    post,
-    slug,
-  });
   return (
     <Layout
       cssClasses="p-0 md:px-[50px]"

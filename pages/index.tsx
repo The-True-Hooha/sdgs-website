@@ -11,6 +11,26 @@ const Home: NextPage = ({ allPosts }: any) => {
       <Events />
       <BlogSection posts={allPosts.edges} />
       <SdgsGoals />
+      <section
+        aria-labelledby="sdgs video"
+        className="p-0 md:px-[50px] md:py-[50px] flex flex-wrap items-center"
+      >
+        <div className="w-full md:w-3/12 p-5 md:p-0">
+          <h2 id="blogs" className="uppercase font-secondary text-[50px]">
+            SDGs Goals as a Video
+          </h2>
+        </div>
+        <div className="w-full md:w-9/12">
+          <iframe
+            className="w-full min-h-[600px]"
+            src="https://www.youtube.com/embed/0XTBYMfZyrM"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
     </Layout>
   );
 };
