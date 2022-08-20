@@ -52,7 +52,8 @@ const BlogSection = ({ posts }: any): JSX.Element => {
       <div className="w-full md:w-[300px] p-5">
         <h2 id="blogs" className="uppercase font-secondary text-[50px]">
           Recent <br />
-          Blog
+          Blog and <br />
+          Events Update
         </h2>
       </div>
       {posts.map(({ node }: any) => (

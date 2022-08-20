@@ -8,8 +8,9 @@ const Home: NextPage = ({ allPosts }: any) => {
   return (
     <Layout cleanMainCss={true} useHero={false}>
       <Intro />
-      <Events />
-      <BlogSection posts={allPosts.edges} />
+      <div className='pt-[100px]'>
+        <BlogSection posts={allPosts.edges} />
+      </div>
       <SdgsGoals />
       <section
         aria-labelledby="sdgs video"
