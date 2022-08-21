@@ -14,7 +14,7 @@ export default function Post({
 }) {
   return (
     <Layout
-      cssClasses="p-0 md:px-[50px]"
+      cssClasses="p-5 md:px-[50px]"
       heroDetails={{
         removeHeroTitle: true,
         label: post?.title,

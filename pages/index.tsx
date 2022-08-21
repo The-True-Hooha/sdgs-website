@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { Intro, Events, BlogSection, SdgsGoals } from '@components/common';
+import { Intro, BlogSection, SdgsGoals } from '@components/common';
 /* import styles from '../styles/Home.module.css'; */
 import Layout from '@components/common/layout';
 import { getAllPostsForHome } from 'lib/api';
