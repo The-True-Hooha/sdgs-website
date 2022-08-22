@@ -62,7 +62,6 @@ const PhotoGallery: NextPage = () => {
     setModalImage(`/assets/photo-gallery/${images[imgIdx]}`);
   };
   const closeModal = (ev: any) => {
-    console.log('close');
     setModalImage('');
   };
   return (
@@ -90,7 +89,7 @@ const PhotoGallery: NextPage = () => {
         </div>
       </div>
       {modalImage && (
-        <Modal closeBtnHandler={closeModal} imageUrl={modalImage} />
+        <Modal closeBtnEventHandler={closeModal} imageUrl={modalImage} />
       )}
     </Layout>
   );
