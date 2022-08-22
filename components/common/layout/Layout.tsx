@@ -40,11 +40,15 @@ const Layout: React.FunctionComponent<Layout> = ({
       </header>
       {useHero && <HeroView {...heroDetails} />}
       <main
-        className={cx(cssClasses, {
-          'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
-        })}
+        className={cx(
+          cssClasses,
+          {
+            'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
+          },
+          'relative'
+        )}
       >
-        {children}
+        { children }
       </main>
       <Footer />
     </div>
