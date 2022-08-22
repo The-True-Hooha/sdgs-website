@@ -60,7 +60,7 @@ const BlogSection = ({ posts }: any): JSX.Element => {
         <BlogPreviewCard
           key={node.slug}
           title={node.title}
-          coverImage={node.featuredImage?.node?.sourceUrl || ''}
+          coverImage={node?.featuredImage?.node?.sourceUrl || ''}
           date={node.date}
           author={node.author}
           slug={node.slug}

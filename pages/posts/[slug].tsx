@@ -18,23 +18,26 @@ export default function Post({
       heroDetails={{
         removeHeroTitle: true,
         label: post?.title,
-        bgImgUrl: post.featuredImage?.node?.sourceUrl || '',
+        bgImgUrl: post?.featuredImage?.node?.sourceUrl || '',
         addBelowLabel: (
           <>
             <div className="flex flex-wrap gap-[10px]">
-              {post.categories.edges.map((v: any) => (
-                <span
-                  key={v.node?.id}
-                  className="inline-block p-2 font-secondary font-bold text-sm text-white bg-red-300"
-                >
-                  {v.node.name}
-                </span>
-              ))}
+              {post?.categories &&
+                post?.categories?.edges.map((v: any) => (
+                  <span
+                    key={v.node?.id}
+                    className="inline-block p-2 font-secondary font-bold text-sm text-white bg-red-300"
+                  >
+                    {v?.node?.name || ''}
+                  </span>
+                ))}
             </div>
-            <BlogDate
-              cssClasses="font-secondary font-bold text-sm text-white"
-              dateString={post.date}
-            />
+            {post?.date && (
+              <BlogDate
+                cssClasses="font-secondary font-bold text-sm text-white"
+                dateString={post?.date}
+              />
+            )}
           </>
         ),
       }}
@@ -44,7 +47,7 @@ export default function Post({
         dangerouslySetInnerHTML={{ __html: post?.content || '' }}
       />
       <footer>
-        {post.tags.edges.length > 0 && (
+        {post?.tags?.edges.length > 0 && (
           <div className="max-w-2xl mx-auto">
             <p className="mt-8 text-lg font-bold">
               Taggeds
