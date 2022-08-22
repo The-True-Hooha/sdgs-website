@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import Layout from '@components/common/layout';
 import { ChevronRight } from '@components/icons';
 // import ModalData from '@components/ui/Modal/Leadership-modal';
 import Image from 'next/image';
 import Link from 'next/link';
 import Elemike from '../public/assets/images/leadership/dr-elemike.jpg'
+import ModalData from '@components/ui/Modal/Leadership-modal';
 
 
 export type LeadershipDataT = {
@@ -110,9 +112,9 @@ export const leadershipCardData: LeadershipDataT[] = [
 
 
 const leadership = () => {
-  // const {isShown, toggle} = useLeadershipModal()
 
   const openModal = (dataIndex: number) => {
+    <ModalData></ModalData>
     console.log(leadershipCardData[dataIndex])
   }
 
@@ -175,7 +177,7 @@ const leadership = () => {
               <div className='mt-4 font-primary text-[15px] w-80 ml-6'>{v.title}</div>
               <div  className='flex w-full ml-6 mt-4'>
                 <p>READ MORE</p>
-                <ChevronRight className="h-[24px] w-[24px] text-red-500" />
+              <ChevronRight className="h-[24px] w-[24px] text-red-500" />
               </div>
             </div>
           ))}
