@@ -3,6 +3,8 @@ import Layout from '@components/common/layout';
 import { NextPage } from 'next';
 import styles from '../styles/PhotoGallery.module.css';
 import Image from 'next/image';
+import Modal from '@components/ui/Modal';
+import { useState } from 'react';
 
 const images = [
   'Picture1.png',
@@ -55,6 +57,13 @@ const images = [
   'Picture48.jpeg',
 ];
 const PhotoGallery: NextPage = () => {
+  const [modalImage, setModalImage] = useState<string>('');
+  const openModal = (imgIdx: number) => {
+    setModalImage(`/assets/photo-gallery/${images[imgIdx]}`);
+  };
+  const closeModal = (ev: any) => {
+    setModalImage('');
+  };
   return (
     <Layout
       heroDetails={{
@@ -66,7 +75,8 @@ const PhotoGallery: NextPage = () => {
           {images.map((v: string, idx: number) => (
             <div
               key={idx}
-              className="w-[180px] md:w-[236px] mb-[10px] overflow-hidden rounded-lg"
+              className="w-[180px] md:w-[236px] mb-[10px] overflow-hidden rounded-lg cursor-pointer"
+              onClick={() => openModal(idx)}
             >
               <img
                 src={`/assets/photo-gallery/${v}`}
@@ -78,6 +88,9 @@ const PhotoGallery: NextPage = () => {
           ))}
         </div>
       </div>
+      {modalImage && (
+        <Modal closeBtnEventHandler={closeModal} imageUrl={modalImage} />
+      )}
     </Layout>
   );
 };

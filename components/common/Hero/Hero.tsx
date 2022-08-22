@@ -28,8 +28,8 @@ const Hero: React.FunctionComponent<HeroType> = ({
       })}
     >
       <div className="w-full min-h-[300px] h-[50vh] relative overflow-hidden flex items-center">
-        <div className="w-full h-full bg-black/30 absolute z-10"></div>
-        <div className="absolute z-20 p-[50px] flex flex-col gap-[30px]">
+        <div className="w-full h-full bg-black/30 absolute z-[1]"></div>
+        <div className="absolute z-[2] p-[50px] flex flex-col gap-[30px]">
           {!removeHeroTitle && (
             <p className="text-white font-secondary text-2xl">{title}</p>
           )}

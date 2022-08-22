@@ -26,7 +26,7 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
 }): JSX.Element => {
   return (
     <div className="w-full overflow-hidden">
-      <div className="w-full">
+      <div className="w-full bg-red-300">
         {coverImage ? (
           <Image
             src={coverImage}
@@ -38,7 +38,7 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
             priority={true}
           />
         ) : (
-          <div className="w-full h-[200px] bg-gray-300 grid place-items-center">
+          <div className="w-full min-h-[230px] bg-gray-300 grid place-items-center">
             <p className="font-secondary text-sm">No Preview image</p>
           </div>
         )}
