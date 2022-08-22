@@ -141,7 +141,7 @@ const MobileNavbar: React.FunctionComponent<{
                         (subMenu: SubMenuType) => (
                           <div className="w-full py-[8px]" key={subMenu.id}>
                             <button
-                              className="font-secondary font-bold text-sm flex items-center"
+                              className="font-secondary font-bold text-sm flex items-center cursor-pointer gap-[10px]"
                               onClick={(e) =>
                                 handleRouteClick(
                                   e,
@@ -151,11 +151,11 @@ const MobileNavbar: React.FunctionComponent<{
                                 )
                               }
                             >
-                              <span className="align-middle">
+                              <span className="text-left max-w-fit">
                                 {subMenu.label}
                               </span>
                               {subMenu.links.length < 1 && (
-                                <ChevronRight className="h-[24px] w-[24px] text-red-400" />
+                                <ChevronRight className="min-h-[24px] min-w-[24px] text-red-400" />
                               )}
                             </button>
                             <ul className="pl-[16px]">

@@ -52,14 +52,15 @@ const BlogSection = ({ posts }: any): JSX.Element => {
       <div className="w-full md:w-[300px] p-5">
         <h2 id="blogs" className="uppercase font-secondary text-[50px]">
           Recent <br />
-          Blog
+          Blog and <br />
+          Events Update
         </h2>
       </div>
       {posts.map(({ node }: any) => (
         <BlogPreviewCard
           key={node.slug}
           title={node.title}
-          coverImage={node.featuredImage?.node?.sourceUrl || ''}
+          coverImage={node?.featuredImage?.node?.sourceUrl || ''}
           date={node.date}
           author={node.author}
           slug={node.slug}
