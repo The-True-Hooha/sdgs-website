@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Layout from '@components/common/layout';
 import { ChevronRight } from '@components/icons';
-// import ModalData from '@components/ui/Modal/Leadership-modal';
 import Image from 'next/image';
 import Link from 'next/link';
 import Elemike from '../public/assets/images/leadership/dr-elemike.jpg'
-import ModalData from '@components/ui/Modal/Leadership-modal';
+import Modal from '@components/ui/Modal';
+
 
 
 export type LeadershipDataT = {
@@ -20,10 +20,31 @@ export const leadershipCardData: LeadershipDataT[] = [
   {
     id: 1,
     name: "Akinyemi O. Ogunkeyede",
+
     image: '/assets/images/leadership/dr-akinyemi.jpg',
+
     title: "Director FUPRE-SDSN",
-    modalContent: ""
+
+    modalContent: `Industrial Chemistry, University of Ibadan (B.Sc. 2004) \n
+    Analytical Chemistry, University of Ibadan (M.Sc. 2006) \n
+    Activities \n
+    Regular discussant on television and radio on environmental matters \n
+    He was the keynote speaker at a biodiversity conservation workshop
+    organised by the ACCARD initiative and National Oil Spill Detection
+    and Response Agency (NOSDRA) at the Ministry of Environment, Yenagoa, Bayelsa \n
+    Member FUPRE linkage committee \n
+    Established the Postgraduate SDSN group \n
+    FUPRE innovation and research development committee member (2019 -2020) \n
+    FUPRE local organising chairperson of the 7th Nigerian Young Academy (NYA) conference and general assembly (2017) \n
+    Consultant for the Coastal and Marine Areas Development Initiative (CMADI on mangrove projects and activities \n
+    Partnership with the PIND foundation to successfully trained 200 unemployable youth in Edo state on Solar PV \n
+    Team Head for the report on the oil-producing companies' contribution in the Niger Delta region to greenhouse gas emissions for PACJA-CSDevNet \n
+    Head of the multidisciplinary consultant team for an NGO called Initiative for Community Development (ICD) in Delta State on the restoration project of agricultural soil polluted with the crude oil spill \n
+    Filed a patent for plastic composite brick to reduce GHG from the solid waste stream in Nigeria \n
+    Developed processes to purify wastewater with the use of agricultural waste products
+    `
   },
+
   {
     id: 2,
     name: 'Doris F. Ogeleka',
@@ -110,17 +131,22 @@ export const leadershipCardData: LeadershipDataT[] = [
   }
 ];
 
+const Leadership = () => {
 
-const leadership = () => {
+  const [dataIndex, setDataIndex] = useState<number>(-1)
 
-  const openModal = (dataIndex: number) => {
-    <ModalData></ModalData>
-    console.log(leadershipCardData[dataIndex])
+  const openModal = (dataIdx: number) => {
+    setDataIndex(dataIdx)
+    // console.log(leadershipCardData[dataIndex])
+  }
+
+  const closeLeadershipModal = (ev: any) => {
+    setDataIndex(-1)
   }
 
   return (
     <Layout
-    cssClasses='lg:h-[4500px] h-[9900px]'
+    cssClasses='lg:h-[4500px] md:h-[5800px] h-[9900px]'
       useHero={false}
     >
       <div className="">
@@ -139,7 +165,7 @@ const leadership = () => {
         <div className='lg:w-full'>
         <h2 className='font-bold font-tertiary lg:text-[25px]'>Dr Elias Emeka Elemike</h2>
         <p className='font-bold'>Chairman</p>
-        <div className='lg:flex '>
+        <div className='lg:flex md:flex'>
         <p className='font-primary text-[14px] lg:text-[15px] w-[350px] lg:w-[550px]'>Elias Emeka Elemike is the current Chairman
           of Sustainable Development Solution Network (SDSN) Federal University of Petroleum Resources Effurun (FUPRE).
           A Senior Lecturer in the Department of Chemistry, with cognate experience in the academia and process industries.
@@ -157,22 +183,26 @@ const leadership = () => {
           Institute of Chattered Chemists of Nigeria (ICCON), South African Chemical Institute (SACI) and Royal Society of Chemistry (RSC). <br/>
           <span className='w-[350px] text-[15px]'> Contact:+2348035642445 <br/>elemike.elias@fupre.edu.ng<br/>chemphilips@yahoo.com</span>
           </p>
-          <div className='mt-4 lg:ml-[40px]'><Image alt={"dr elemike"} src={Elemike} width={350} height={380}/></div>
+          <div className='mt-4 lg:ml-[40px] md:ml-[50px] md:w-[260px] md:h-[260px]'>
+            <Image alt={"dr elemike"} src={Elemike} width={350} height={380}/>
+            </div>
           </div>
 
         </div>
 
-        <div className='lg:mt-[40px] grid justify-center lg:grid-cols-3 gap-[7px] mt-[20px]'>
+        <div className='lg:mt-[40px] grid justify-center lg:grid-cols-3 md:grid-cols-2 gap-[7px] mt-[20px]'>
           {leadershipCardData.map((v: LeadershipDataT, idx: number) => (
-          <div key={idx} onClick={() => openModal(idx)} className="lg:w-[350px] w-[350px] h-[600px] cursor-pointer lg:h-[600px] bg-[#f7f7f7] mt-[30px] lg:mt-6">
-              <Image
-              src={v.image}
-              alt={v.name}
-              width={350}
-              height={380}
-              layout="fixed"
-              className='mt-[50px] rounded'
-              />
+          <div
+              key={idx}
+              onClick={() => openModal(idx)}
+              className="lg:w-[350px] w-[350px] md:w-[350px] md:h-[600px] h-[600px] cursor-pointer lg:h-[600px] bg-[#f7f7f7] mt-[30px] lg:mt-6">
+                <Image
+                src={v.image}
+                alt={v.name}
+                width={350}
+                height={380}
+                className='mt-[50px] rounded'
+                />
               <div className='mt-4 font-secondary text-[15px] flex justify-center'>{v.name}</div>
               <div className='mt-4 font-primary text-[15px] w-80 ml-6'>{v.title}</div>
               <div  className='flex w-full ml-6 mt-4'>
@@ -185,8 +215,11 @@ const leadership = () => {
         <div></div>
       </div>
       </div>
+      {dataIndex > -1  && (
+        <Modal imageUrl={leadershipCardData[dataIndex].image} text={leadershipCardData[dataIndex].title} label={leadershipCardData[dataIndex].name} closeBtnEventHandler={closeLeadershipModal} />
+      )}
     </Layout>
   );
 }
 
-export default leadership
+export default Leadership

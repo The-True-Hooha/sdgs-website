@@ -2,7 +2,7 @@
 import Layout from '@components/common/layout';
 import { NextPage } from 'next';
 import styles from '../styles/PhotoGallery.module.css';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Modal from '@components/ui/Modal';
 import { useState } from 'react';
 
