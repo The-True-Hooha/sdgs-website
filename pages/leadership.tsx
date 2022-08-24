@@ -145,20 +145,10 @@ const Leadership = () => {
   return (
     <Layout
     cssClasses='lg:h-[5500px] md:h-[5800px] h-[9900px] xl:h-[4500px] sm:h-[5800px]'
-      useHero={false}
+     heroDetails={{
+        label: 'Leadership',
+      }}
     >
-      <div className="">
-        {/* div should contain the image header for the leadership page */}
-        <div className='font-secondary px-[30px] py-[30px] lg:px-[100px] lg:py-[100px] font-bold'>
-        <Link href="/">
-          <a className='text-[10px] lg:text-[15px]'>HOME / OUR LEADERSHIP</a>
-        </Link>
-        <div className='lg:pt-[60px] pt-5 lg:text-[20px] text-[15px]'>
-        <h2>SDGS</h2>
-        <h2 className='pt-[30px] lg:text-[27px] text-[15px]'>leadership</h2>
-        </div>
-      </div>
-
       <div className='lg:pl-[250px] pl-[15px] lg:w-full'>
         <div className='lg:w-full'>
         <h2 className='font-bold font-tertiary lg:text-[25px]'>Dr Elias Emeka Elemike</h2>
@@ -211,7 +201,6 @@ const Leadership = () => {
           ))}
         </div>
         <div></div>
-      </div>
       </div>
       {dataIndex > -1  && (
         <Modal imageUrl={leadershipCardData[dataIndex].image} text={leadershipCardData[dataIndex].title} label={leadershipCardData[dataIndex].name} closeBtnEventHandler={closeLeadershipModal} />
