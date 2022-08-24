@@ -148,19 +148,30 @@ const Leadership = () => {
 
   return (
     <Layout
-      cssClasses=""
+      cssClasses="lg:px-[150px]"
       heroDetails={{
         label: 'Leadership',
         cssClasses: 'break-all',
       }}
     >
       <div className="w-full">
-        <div className="w-full">
-          <h2 className="font-bold font-tertiary lg:text-[25px]">
-            Dr Elias Emeka Elemike
-          </h2>
-          <p className="font-bold">Chairman</p>
-          <div className="lg:flex md:flex sm:flex">
+        <div className="w-full flex flex-col md:flex-row-reverse gap-6">
+          <div className="w-full md:w-6/12">
+            <div className="w-full">
+              <Image
+                alt={'dr elemike'}
+                src={Elemike}
+                width={350}
+                height={380}
+                className=" rounded-lg"
+              />
+            </div>
+            <h2 className="font-bold font-secondary text-lg">
+              Dr Elias Emeka Elemike
+            </h2>
+            <p className="font-secondary">Chairman</p>
+          </div>
+          <div className="w-full md:w-6/12">
             <p className="font-primary text-[14px] lg:text-[15px] w-[350px] lg:w-[550px]">
               Elias Emeka Elemike is the current Chairman of Sustainable
               Development Solution Network (SDSN) Federal University of
@@ -192,47 +203,37 @@ const Leadership = () => {
               African Chemical Institute (SACI) and Royal Society of Chemistry
               (RSC). <br />
               <span className="w-[350px] text-[15px]">
-                {' '}
                 Contact:+2348035642445 <br />
                 elemike.elias@fupre.edu.ng
                 <br />
                 chemphilips@yahoo.com
               </span>
             </p>
-            <div className="mt-4 lg:ml-[40px] md:ml-[50px] md:w-[260px] md:h-[260px] sm:w-[290px] sm:ml-[50px]">
-              <Image
-                alt={'dr elemike'}
-                src={Elemike}
-                width={350}
-                height={380}
-              />
-            </div>
           </div>
         </div>
 
-        <div className="lg:mt-[40px] grid justify-center xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-[7px] mt-[20px] sm:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-between gap-[20px] mt-[20px] lg:mt-[40px]">
           {leadershipCardData.map((v: LeadershipDataT, idx: number) => (
             <div
               key={idx}
               onClick={() => openModal(idx)}
-              className="lg:w-[330px] w-[350px] md:w-[350px] xl:w-[350px] md:h-[600px] h-[600px] cursor-pointer lg:h-[570px] bg-[#f7f7f7] mt-[30px] lg:mt-6"
+              className="cursor-pointer bg-[#f7f7f7] overflow-hidden rounded-lg"
             >
               <Image
                 src={v.image}
                 alt={v.name}
                 width={350}
                 height={380}
-                className="mt-[50px] rounded"
+                layout="responsive"
+                className="p-0 m-0"
               />
-              <div className="mt-4 font-secondary text-[15px] flex justify-center">
-                {v.name}
-              </div>
-              <div className="mt-4 font-primary text-[15px] w-80 ml-6">
-                {v.title}
-              </div>
-              <div className="flex w-full ml-6 mt-4">
-                <p>READ MORE</p>
-                <ChevronRight className="h-[24px] w-[24px] text-red-500" />
+              <div className="w-full p-5 flex flex-col gap-5">
+                <p className="font-secondary text-[15px]">{v.name}</p>
+                <p className="font-primary text-[15px]">{v.title}</p>
+                <button className="flex w-full">
+                  <span>READ MORE</span>
+                  <ChevronRight className="h-[24px] w-[24px] text-red-500" />
+                </button>
               </div>
             </div>
           ))}

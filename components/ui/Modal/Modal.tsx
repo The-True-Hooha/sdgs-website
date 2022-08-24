@@ -16,7 +16,10 @@ const Modal: React.FunctionComponent<ModalT> = ({
   closeBtnEventHandler,
 }): JSX.Element => {
   return (
-    <div className="fixed inset-0 bg-gray-200/40 backdrop-blur z-[3] grid place-items-center py-[100px]">
+    <div
+      className="fixed inset-0 bg-gray-200/40 backdrop-blur z-[3] grid place-items-center"
+      onClick={(e: any) => closeBtnEventHandler(e)}
+    >
       <div
         className={cx(
           'w-11/12 md:w-8/12 bg-white max-h-[500px] rounded-[8px] relative overflow-hidden',
@@ -24,6 +27,7 @@ const Modal: React.FunctionComponent<ModalT> = ({
             'px-5 py-11': label && text,
           }
         )}
+        onClick={(e: any) => e.stopPropagation()}
       >
         <div
           onClick={(e: any) => closeBtnEventHandler(e)}
