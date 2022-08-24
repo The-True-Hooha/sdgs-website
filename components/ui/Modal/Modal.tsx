@@ -5,7 +5,9 @@ import cx from 'clsx';
 type ModalT = {
   imageUrl: string;
   label?: string;
+  smLabel?: string;
   text?: string;
+  innerHtmlText?: string;
   closeBtnEventHandler: (ev: any) => void;
 };
 
@@ -14,17 +16,19 @@ const Modal: React.FunctionComponent<ModalT> = ({
   label = '',
   text = '',
   closeBtnEventHandler,
+  innerHtmlText = '',
+  smLabel = '',
 }): JSX.Element => {
   return (
     <div
-      className="fixed inset-0 bg-gray-200/40 backdrop-blur z-[3] grid place-items-center"
+      className="fixed inset-0 bg-gray-200/40 backdrop-blur z-[3] grid place-items-center pt-[160px] pb-[100px] overflow-scroll"
       onClick={(e: any) => closeBtnEventHandler(e)}
     >
       <div
         className={cx(
-          'w-11/12 md:w-8/12 bg-white max-h-[500px] rounded-[8px] relative overflow-hidden',
+          'w-11/12 md:w-8/12 bg-white max-h-[600px] rounded-[8px] relative overflow-hidden',
           {
-            'px-5 py-11': label && text,
+            'px-5 py-11': label && (text || innerHtmlText),
           }
         )}
         onClick={(e: any) => e.stopPropagation()}
@@ -38,13 +42,13 @@ const Modal: React.FunctionComponent<ModalT> = ({
 
         <div
           className={cx(
-            'w-full h-full flex flex-col md:flex-row gap-[15px] justify-center items-center',
+            'w-full h-full flex flex-col md:flex-row gap-[15px] justify-center items-start',
             {
-              '!overflow-y-scroll': label && text,
+              '!overflow-y-scroll': label && (text || innerHtmlText),
             }
           )}
         >
-          <div className="w-full h-full md:w-6/12">
+          <div className="w-full h-full md:w-5/12">
             <Image
               src={imageUrl}
               alt="alt"
@@ -55,14 +59,18 @@ const Modal: React.FunctionComponent<ModalT> = ({
               className="w-full object-cover object-center"
             />
           </div>
-          {label && text && (
-            <div className="w-full md:w-6/12">
+          {label && (text || innerHtmlText) && (
+            <div className="w-full max-h-[500px] md:w-7/12 overflow-auto flex flex-col gap-5">
               {label && (
-                <h2 className="font-secondary font-bold text-base mb-6">
+                <h2 className="font-secondary font-bold text-base">
                   {label}
                 </h2>
               )}
+              {smLabel && <p className='font-secondary text-sm'>{smLabel}</p>}
               {text && <p>{text}</p>}
+              {innerHtmlText && (
+                <div dangerouslySetInnerHTML={{ __html: innerHtmlText }}></div>
+              )}
             </div>
           )}
         </div>
