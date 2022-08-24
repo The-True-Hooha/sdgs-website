@@ -43,12 +43,12 @@ const Layout: React.FunctionComponent<Layout> = ({
         className={cx(
           cssClasses,
           {
-            'w-full min-h-[70vh] pt-[70px]': !cleanMainCss,
+            'w-full min-h-[70vh] pt-[70px] p-[25px] md:p-[50px]': !cleanMainCss,
           },
           'relative'
         )}
       >
-        { children }
+        {children}
       </main>
       <Footer />
     </div>

@@ -8,7 +8,7 @@ const ContactUs: NextPage = () => {
         label: 'Contact Us',
       }}
     >
-      <div className="w-full p-9">
+      <div className="w-full">
         <div className="w-6/12">
           <p className="font-secondary text-2xl mb-[20px]">
             CENTER FOR SUSTAINABLE DEVELOPMENT FEDERAL UNIVERSITY OF PETROLEUM

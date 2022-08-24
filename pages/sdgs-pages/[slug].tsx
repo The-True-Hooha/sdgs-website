@@ -18,7 +18,6 @@ export default function Page({
 }) {
   return (
     <Layout
-      cssClasses="p-0 md:px-[50px]"
       heroDetails={{
         label: pageLinkData?.label,
       }}
