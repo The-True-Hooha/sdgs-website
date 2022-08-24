@@ -26,7 +26,7 @@ const Modal: React.FunctionComponent<ModalT> = ({
     >
       <div
         className={cx(
-          'w-11/12 md:w-8/12 bg-white max-h-[600px] rounded-[8px] relative overflow-hidden',
+          'w-11/12 md:w-8/12 bg-white max-h-[80vh] rounded-[8px] relative overflow-hidden',
           {
             'px-5 py-11': label && (text || innerHtmlText),
           }
@@ -42,7 +42,7 @@ const Modal: React.FunctionComponent<ModalT> = ({
 
         <div
           className={cx(
-            'w-full h-full flex flex-col md:flex-row gap-[15px] justify-center items-start',
+            'w-full max-h-[600px] flex flex-col md:flex-row gap-[15px] justify-center items-start',
             {
               '!overflow-y-scroll': label && (text || innerHtmlText),
             }
@@ -60,13 +60,11 @@ const Modal: React.FunctionComponent<ModalT> = ({
             />
           </div>
           {label && (text || innerHtmlText) && (
-            <div className="w-full max-h-[500px] md:w-7/12 overflow-auto flex flex-col gap-5">
+            <div className="w-full max-h-[80vh] md:w-7/12 overflow-auto flex flex-col gap-5">
               {label && (
-                <h2 className="font-secondary font-bold text-base">
-                  {label}
-                </h2>
+                <h2 className="font-secondary font-bold text-base">{label}</h2>
               )}
-              {smLabel && <p className='font-secondary text-sm'>{smLabel}</p>}
+              {smLabel && <p className="font-secondary text-sm">{smLabel}</p>}
               {text && <p>{text}</p>}
               {innerHtmlText && (
                 <div dangerouslySetInnerHTML={{ __html: innerHtmlText }}></div>
