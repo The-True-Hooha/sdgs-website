@@ -146,7 +146,7 @@ const Leadership = () => {
 
   return (
     <Layout
-    cssClasses='lg:h-[4500px] md:h-[5800px] h-[9900px]'
+    cssClasses='lg:h-[5500px] md:h-[5800px] h-[9900px] xl:h-[4500px] sm:h-[5800px]'
       useHero={false}
     >
       <div className="">
@@ -165,7 +165,7 @@ const Leadership = () => {
         <div className='lg:w-full'>
         <h2 className='font-bold font-tertiary lg:text-[25px]'>Dr Elias Emeka Elemike</h2>
         <p className='font-bold'>Chairman</p>
-        <div className='lg:flex md:flex'>
+        <div className='lg:flex md:flex sm:flex'>
         <p className='font-primary text-[14px] lg:text-[15px] w-[350px] lg:w-[550px]'>Elias Emeka Elemike is the current Chairman
           of Sustainable Development Solution Network (SDSN) Federal University of Petroleum Resources Effurun (FUPRE).
           A Senior Lecturer in the Department of Chemistry, with cognate experience in the academia and process industries.
@@ -183,19 +183,19 @@ const Leadership = () => {
           Institute of Chattered Chemists of Nigeria (ICCON), South African Chemical Institute (SACI) and Royal Society of Chemistry (RSC). <br/>
           <span className='w-[350px] text-[15px]'> Contact:+2348035642445 <br/>elemike.elias@fupre.edu.ng<br/>chemphilips@yahoo.com</span>
           </p>
-          <div className='mt-4 lg:ml-[40px] md:ml-[50px] md:w-[260px] md:h-[260px]'>
+          <div className='mt-4 lg:ml-[40px] md:ml-[50px] md:w-[260px] md:h-[260px] sm:w-[290px] sm:ml-[50px]'>
             <Image alt={"dr elemike"} src={Elemike} width={350} height={380}/>
             </div>
           </div>
 
         </div>
 
-        <div className='lg:mt-[40px] grid justify-center lg:grid-cols-3 md:grid-cols-2 gap-[7px] mt-[20px]'>
+        <div className='lg:mt-[40px] grid justify-center xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-2 gap-[7px] mt-[20px] sm:grid-cols-2'>
           {leadershipCardData.map((v: LeadershipDataT, idx: number) => (
           <div
               key={idx}
               onClick={() => openModal(idx)}
-              className="lg:w-[350px] w-[350px] md:w-[350px] md:h-[600px] h-[600px] cursor-pointer lg:h-[600px] bg-[#f7f7f7] mt-[30px] lg:mt-6">
+              className="lg:w-[330px] w-[350px] md:w-[350px] xl:w-[350px] md:h-[600px] h-[600px] cursor-pointer lg:h-[570px] bg-[#f7f7f7] mt-[30px] lg:mt-6">
                 <Image
                 src={v.image}
                 alt={v.name}
