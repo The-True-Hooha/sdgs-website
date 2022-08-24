@@ -11,7 +11,7 @@ const ContactUs: NextPage = () => {
       <div className="w-full p-9">
         <div className="w-6/12">
           <p className="font-secondary text-2xl mb-[20px]">
-            CENTER FOR SUSTAINABLE DEVELOPEMENT FEDERAL UNIVERSITY OF PETROLEUM
+            CENTER FOR SUSTAINABLE DEVELOPMENT FEDERAL UNIVERSITY OF PETROLEUM
             RESOURCES, EFFURUN DELTA STATE, NIGERIA, P.M.B 1221
           </p>
           <div className="flex flex-col gap-[30px]">
