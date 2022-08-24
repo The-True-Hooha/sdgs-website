@@ -6,8 +6,6 @@ import Link from 'next/link';
 import Elemike from '../public/assets/images/leadership/dr-elemike.jpg'
 import Modal from '@components/ui/Modal';
 
-
-
 export type LeadershipDataT = {
   id: number
   name: string
