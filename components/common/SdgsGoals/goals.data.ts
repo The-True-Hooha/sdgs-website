@@ -24,7 +24,7 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
   },
   {
     id: 3,
-    bgImg: '/assets/goals-bg-images/good-care.jpg',
+    bgImg: '/assets/photo-gallery/Picture31.png',  // '/assets/goals-bg-images/good-care.jpg',
     goalImg: '/assets/goals-images/3.png',
     goalDescription:
       'Ensure healthy lives and promote well-being for all at all ages.',
@@ -63,7 +63,7 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
   },
   {
     id: 8,
-    bgImg: '/assets/goals-bg-images/female-software-dev.jpg',
+    bgImg: '/assets/photo-gallery/Picture3.png', // '/assets/goals-bg-images/female-software-dev.jpg',
     goalImg: '/assets/goals-images/8.png',
     goalDescription:
       'Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all.',
@@ -71,7 +71,7 @@ export const sdgsGoals: SdgsGoalsDataType[] = [
   },
   {
     id: 9,
-    bgImg: '/assets/goals-bg-images/engineer.jpg',
+    bgImg: '/assets/photo-gallery/Picture15.png', // '/assets/goals-bg-images/engineer.jpg',
     goalImg: '/assets/goals-images/9.webp',
     goalDescription:
       'Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation.',
