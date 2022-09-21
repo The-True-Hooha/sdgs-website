@@ -35,7 +35,6 @@ const BlogPreviewCard: React.FunctionComponent<BlogPreviewCardType> = ({
             height={200}
             layout="responsive"
             className="w-full object-cover object-center"
-            priority={true}
           />
         ) : (
           <div className="w-full min-h-[230px] bg-gray-300 grid place-items-center">
