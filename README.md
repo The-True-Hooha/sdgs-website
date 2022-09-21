@@ -6,6 +6,15 @@ This example showcases Next.js's [Static Generation](https://nextjs.org/docs/bas
 
 ### [sdgs-website.vercel.app](sdgs-website.vercel.app)
 
+```bash
+
+https://sdgsfupre-ereyomi.000webhostapp.com/wp-admin/
+
+username: sdgsfupre
+password: tZ^tbu^P2BWVS8TtjS1S*SCS
+```
+
+
 ## Configuration
 
 ### Step 1. Prepare your WordPress site
