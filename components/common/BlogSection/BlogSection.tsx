@@ -44,7 +44,6 @@ const blogPosts = [
 ];
 
 const BlogSection = ({ posts }: any): JSX.Element => {
-  console.log(posts);
   return (
     <section
       aria-labelledby="blogs"

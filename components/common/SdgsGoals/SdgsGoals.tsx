@@ -16,7 +16,6 @@ const SdgsGoals = (): JSX.Element => {
             height={150}
             layout="responsive"
             className="object-contain object-center"
-            priority={true}
           />
         </div>
       </div>
