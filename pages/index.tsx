@@ -4,7 +4,6 @@ import Layout from '@components/common/layout';
 import { getAllPostsForHome } from 'lib/api';
 
 const Home: NextPage = ({ allPosts }: any) => {
-
   return (
     <Layout cleanMainCss={true} useHero={false}>
       <Intro />
@@ -37,15 +36,16 @@ const Home: NextPage = ({ allPosts }: any) => {
 
 export default Home;
 
-/* export async function getStaticProps({ preview = false }) {
+export async function getStaticProps({ preview = false }) {
+  const allPosts = await getAllPostsForHome(preview);
+  return {
+    props: { allPosts, preview },
+    revalidate: 60,
+  };
+}
+/* export async function getServerSideProps({ preview = false }) {
   const allPosts = await getAllPostsForHome(preview);
   return {
     props: { allPosts, preview },
   };
 } */
-export async function getServerSideProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview);
-  return {
-    props: { allPosts, preview },
-  };
-}

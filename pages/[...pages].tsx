@@ -5,17 +5,16 @@ import {
 } from '@components/common/Navbar/data/linklist.data';
 import { LinkType } from '@components/common/Navbar/model/LinkListType';
 import { getPage } from 'lib/api';
-import { GetStaticPaths, GetStaticProps } from 'next/types';
+import { GetStaticPaths, GetStaticPropsContext } from 'next/types';
 
 export default function Page({
   data,
   pageLinkData,
-  slug,
 }: {
   data: any;
   pageLinkData: LinkType | null;
-  slug: string;
 }) {
+  console.log(data);
   return (
     <Layout
       heroDetails={{
@@ -29,13 +28,29 @@ export default function Page({
     </Layout>
   );
 }
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const data = await getPage(params!.slug);
+export const getStaticProps = async ({
+  params,
+}: GetStaticPropsContext<{ pages: string[] }>) => {
+  let data = null;
+  const page = params!.pages[0];
+  try {
+    data = await getPage(page);
+    if (data === null) {
+      return {
+        notFound: true,
+      };
+    }
+  } catch (error) {
+    return {
+      redirect: {
+        destination: '/500',
+      },
+    };
+  }
   return {
     props: {
       data,
-      pageLinkData: getPageDataBySlug(params!.slug as string),
-      slug: params?.['slug'],
+      pageLinkData: getPageDataBySlug(page as string),
     },
     revalidate: 10,
   };
