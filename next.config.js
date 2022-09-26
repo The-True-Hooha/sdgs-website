@@ -7,8 +7,6 @@ const nextConfig = {
       'localhost:8888',
       'sdgsfupre-ereyomi.000webhostapp.com',
     ],
-    loader: 'imgix',
-    path: '/',
   },
 };
 
