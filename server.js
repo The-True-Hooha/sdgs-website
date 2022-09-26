@@ -9,8 +9,8 @@ import { parse } from 'url';
 import { next } from 'next'; */
 
 const dev = process.env.NODE_ENV !== 'production';
-const hostname = dev ? 'localhost' : 'fuprecsd.org';
-const port = 3000;
+const hostname = dev ? 'localhost' : process.env.hostname;
+const port = process.env.port || 3000;
 // when using middleware `hostname` and `port` must be provided below
 const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
